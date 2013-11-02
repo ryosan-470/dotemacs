@@ -66,3 +66,8 @@
 (setq default-buffer-file-coding-system 'utf-8)
 (set-buffer-file-coding-system 'utf-8)
 (set-clipboard-coding-system 'utf-8)
+;; ファイル名補完 大文字小文字の区別しない
+(setq completion-ignore-case t)
+;; 同名ファイルバッファ名識別文字列の変更
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-branckets)
