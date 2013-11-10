@@ -49,7 +49,7 @@ then
     echo '==========================================================='
     git clone https://github.com/emacs-java/auto-java-complete.git
     cd $HOME/
-    ln -s ${REPO}/.java_base.tag  .java_base.tag
+    ln -s ${HOME}/.dotconfig/dotemacs/.java_base.tag ${HOME}/.java_base.tag 
 else
     echo 'Abort installing'
 fi
