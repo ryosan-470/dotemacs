@@ -26,33 +26,39 @@ else
     exit 0
 fi
 
+# git submodule
+cd ${HOME}/.dotconfig/dotemacs/
+git submodule init
+git submodule update
+# make symbolic link to .java_base.tag
+ln -s ${HOME}/.dotconfig/dotemacs/.java_base.tag ${HOME}/.java_base.tag 
 # Installing emacs elisp
-echo '==========================================================='
-echo 'We will install emacs plugin (emacs elisp) below'
-echo 'yasnippet'
-echo 'auto-java-complete'
-echo 'Do you really install now?(yes/no) (RECOMENDDED)'
-echo '==========================================================='
-read ans
-if [ "$ans" = "yes" ]
-then
-    # yasnippet
-    cd ${HOME}/.dotconfig/dotemacs/elisp/
-    echo '==========================================================='
-    echo '|installing yasnippet...                                  |'
-    echo '==========================================================='
-    git clone https://github.com/capitaomorte/yasnippet.git
+# echo '==========================================================='
+# echo 'We will install emacs plugin (emacs elisp) below'
+# echo 'yasnippet'
+# echo 'auto-java-complete'
+# echo 'Do you really install now?(yes/no) (RECOMENDDED)'
+# echo '==========================================================='
+# read ans
+# if [ "$ans" = "yes" ]
+# then
+#     # yasnippet
+#     cd ${HOME}/.dotconfig/dotemacs/elisp/
+#     echo '==========================================================='
+#     echo '|installing yasnippet...                                  |'
+#     echo '==========================================================='
+#     git clone https://github.com/capitaomorte/yasnippet.git
     
-    # auto-java-complete
-    echo '==========================================================='
-    echo 'installing auto-java-complete...'
-    echo '==========================================================='
-    git clone https://github.com/emacs-java/auto-java-complete.git
-    cd $HOME/
-    ln -s ${HOME}/.dotconfig/dotemacs/.java_base.tag ${HOME}/.java_base.tag 
-else
-    echo 'Abort installing'
-fi
+#     # auto-java-complete
+#     echo '==========================================================='
+#     echo 'installing auto-java-complete...'
+#     echo '==========================================================='
+#     git clone https://github.com/emacs-java/auto-java-complete.git
+#     cd $HOME/
+#     ln -s ${HOME}/.dotconfig/dotemacs/.java_base.tag ${HOME}/.java_base.tag 
+# else
+#     echo 'Abort installing'
+# fi
 
 echo '==========================================================='
 echo 'Finished installing...'
