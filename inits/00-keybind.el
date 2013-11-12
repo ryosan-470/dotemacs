@@ -57,15 +57,6 @@
 (global-set-key [f6] 'linum-mode)
 ;;Line mergine
 (setq linum-format "%3d ")
-;; Japanese Input & Show Settings
-(prefer-coding-system 'utf-8)
-(set-default-coding-systems 'utf-8)
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(set-buffer-file-coding-system 'utf-8)
-(setq default-buffer-file-coding-system 'utf-8)
-(set-buffer-file-coding-system 'utf-8)
-(set-clipboard-coding-system 'utf-8)
 ;; ファイル名補完 大文字小文字の区別しない
 (setq completion-ignore-case t)
 ;; 同名ファイルバッファ名識別文字列の変更
