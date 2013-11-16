@@ -4,3 +4,9 @@
 [submodule "elisp/auto-java-complete"]
 	path = elisp/auto-java-complete
 	url = https://github.com/emacs-java/auto-java-complete.git
+[submodule "snippets/latex-mode"]
+	path = snippets/latex-mode
+	url = https://github.com/madsdk/yasnippets-latex.git
+[submodule "snippets/java-mode"]
+	path = snippets/java-mode
+	url = https://github.com/nekop/yasnippet-java-mode.git
