@@ -14,3 +14,9 @@
 (setq default-buffer-file-coding-system 'utf-8)
 (set-buffer-file-coding-system 'utf-8)
 (set-clipboard-coding-system 'utf-8)
+;; start up time count
+(defun boot-time () 
+  (interactive)
+  (message "Start up time：%.3f sec"
+            (float-time (time-subtract after-init-time before-init-time))))
+
