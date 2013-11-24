@@ -1,11 +1,9 @@
 #!/bin/bash
-#
-# シンポリックリンクを作成します
-#
-
 files="
 .emacs.d
 "
+INSTALL_PATH=${HOME}/.dotconfig
+
 PWD=${PWD}
 echo '==========================================================='
 echo 'W A R N I N G'
@@ -17,9 +15,14 @@ read ans
 if [ "$ans" = "yes" ]
 then
     echo 'Start cloneing to github and making symbolic link...'
-    mkdir ${HOME}/.dotconfig
-    cd ..
-    cp -r dotemacs ${HOME}/.dotconfig/
+    if [ ! -e $INSTALL_PATH ]; then	
+	mkdir $INSTALL_PATH
+    fi
+    cd $INSTALL_PATH
+    git clone https://github.com/jtwp470/dotemacs.git
+    if [ ! -e ${HOME}/.emacs.d ]; then
+	mv ${HOME}/.emacs.d ${HOME}/.emacs.d_bk	
+    fi
     ln -s ${HOME}/.dotconfig/dotemacs ${HOME}/.emacs.d 
 else
     echo 'Abort installing'
@@ -32,33 +35,6 @@ git submodule init
 git submodule update
 # make symbolic link to .java_base.tag
 ln -s ${HOME}/.dotconfig/dotemacs/.java_base.tag ${HOME}/.java_base.tag 
-# Installing emacs elisp
-# echo '==========================================================='
-# echo 'We will install emacs plugin (emacs elisp) below'
-# echo 'yasnippet'
-# echo 'auto-java-complete'
-# echo 'Do you really install now?(yes/no) (RECOMENDDED)'
-# echo '==========================================================='
-# read ans
-# if [ "$ans" = "yes" ]
-# then
-#     # yasnippet
-#     cd ${HOME}/.dotconfig/dotemacs/elisp/
-#     echo '==========================================================='
-#     echo '|installing yasnippet...                                  |'
-#     echo '==========================================================='
-#     git clone https://github.com/capitaomorte/yasnippet.git
-    
-#     # auto-java-complete
-#     echo '==========================================================='
-#     echo 'installing auto-java-complete...'
-#     echo '==========================================================='
-#     git clone https://github.com/emacs-java/auto-java-complete.git
-#     cd $HOME/
-#     ln -s ${HOME}/.dotconfig/dotemacs/.java_base.tag ${HOME}/.java_base.tag 
-# else
-#     echo 'Abort installing'
-# fi
 
 echo '==========================================================='
 echo 'Finished installing...'
