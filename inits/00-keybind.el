@@ -62,3 +62,9 @@
 ;; 同名ファイルバッファ名識別文字列の変更
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-branckets)
+;; 色を付ける
+(global-font-lock-mode t)
+;; メニューバーを非表示にする
+(cond
+ (window-system (tool-bar-mode -1))
+ (t             (menu-bar-mode -1)))
