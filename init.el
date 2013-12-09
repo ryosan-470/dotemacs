@@ -19,3 +19,5 @@
   (interactive)
   (message "Start up time：%.3f sec"
             (float-time (time-subtract after-init-time before-init-time))))
+;; ファイルの最後に改行を挿入する
+(setq require-final-newline t)
