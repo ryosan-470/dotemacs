@@ -20,7 +20,7 @@ then
     fi
     cd $INSTALL_PATH
     git clone https://github.com/jtwp470/dotemacs.git
-    if [ ! -e ${HOME}/.emacs.d ]; then
+    if [ -e ${HOME}/.emacs.d ]; then
 	mv ${HOME}/.emacs.d ${HOME}/.emacs.d_bk	
     fi
     ln -s ${HOME}/.dotconfig/dotemacs ${HOME}/.emacs.d 
