@@ -10,6 +10,3 @@
 [submodule "snippets/java-mode"]
 	path = snippets/java-mode
 	url = https://github.com/nekop/yasnippet-java-mode.git
-[submodule "elisp/autocomplete"]
-	path = elisp/autocomplete
-	url = https://github.com/auto-complete/auto-complete.git
