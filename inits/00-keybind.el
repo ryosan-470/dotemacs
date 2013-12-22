@@ -68,3 +68,5 @@
 (cond
  (window-system (tool-bar-mode -1))
  (t             (menu-bar-mode -1)))
+;; zshを使う
+(setq shell-file-name "/bin/zsh")

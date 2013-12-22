@@ -1,6 +1,6 @@
 [submodule "elisp/yasnippet"]
 	path = elisp/yasnippet
-	url = https://github.com/capitaomorte/yasnippet
+	url = https://github.com/capitaomorte/yasnippet.git
 [submodule "elisp/auto-java-complete"]
 	path = elisp/auto-java-complete
 	url = https://github.com/emacs-java/auto-java-complete.git
@@ -10,3 +10,6 @@
 [submodule "snippets/java-mode"]
 	path = snippets/java-mode
 	url = https://github.com/nekop/yasnippet-java-mode.git
+[submodule "elisp/autocomplete"]
+	path = elisp/autocomplete
+	url = https://github.com/auto-complete/auto-complete.git
