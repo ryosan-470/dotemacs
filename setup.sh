@@ -3,7 +3,6 @@ files="
 .emacs.d
 "
 INSTALL_PATH=${HOME}/.dotconfig
-
 PWD=${PWD}
 echo '==========================================================='
 echo 'W A R N I N G'
@@ -19,6 +18,7 @@ then
 	mkdir $INSTALL_PATH
     fi
     cd $INSTALL_PATH
+    git clone git@github.com:jtwp470/dotemacs.git
     git clone https://github.com/jtwp470/dotemacs.git
     if [ -e ${HOME}/.emacs.d ]; then
 	mv ${HOME}/.emacs.d ${HOME}/.emacs.d_bk	
