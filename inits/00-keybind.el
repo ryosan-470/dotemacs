@@ -46,3 +46,4 @@
 (global-linum-mode t)
 ;; F6で行番号を表示
 (global-set-key [f6] 'linum-mode)
+(setq linum-format "%2d ")
