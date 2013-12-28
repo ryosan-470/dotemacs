@@ -59,6 +59,9 @@
 (setq linum-format "%3d ")
 ;; ファイル名補完 大文字小文字の区別しない
 (setq completion-ignore-case t)
+;; 大文字と小文字を区別しない
+(setq read-buffer-completion-ignore-case t)    ;; バッファ名
+(setq read-file-name-completion-ignore-case t) ;; ファイル名
 ;; 同名ファイルバッファ名識別文字列の変更
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-branckets)
