@@ -11,7 +11,7 @@ Emacsの設定ファイル群です．通常の人はdotfilesなどにまとめ�
 
     $ wget https://raw.github.com/jtwp470/dotemacs/master/setup.sh
 
-あとは画面の支持に従いインストールしてください.
+あとは画面の指示に従いインストールしてください.
 
 # していること #
 

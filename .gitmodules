@@ -10,3 +10,6 @@
 [submodule "snippets/java-mode"]
 	path = snippets/java-mode
 	url = https://github.com/nekop/yasnippet-java-mode.git
+[submodule "elisp/helm"]
+	path = elisp/helm
+	url = https://github.com/emacs-helm/helm.git
