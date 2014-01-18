@@ -47,3 +47,8 @@
 ;; F6で行番号を表示
 (global-set-key [f6] 'linum-mode)
 (setq linum-format "%2d ")
+;; 同名ファイルバッファ名識別文字列の変更
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-branckets)
+;; zshを使う
+(setq shell-file-name "/bin/zsh")
