@@ -19,6 +19,7 @@ Emacsの設定は通常`init.el`または`.emacs.d`に追加していくもの�
  * 17-pythonmode.el
  * 19-markdown.el
  * 21-undotree.el  `C-x u`で今まで編集してきた履歴表示
+ * 22-google-translate.el `C-x C-t`で選択領域を英語から日本語に翻訳する `C-x t`で翻訳画面
  * 23-recentf  `C-x r f`で最近開いたファイルを開く
  * 40-arduino-mode.el  Arduino用スケッチのシンタックスハイライト
  * 99-encoding.el  文字エンコーディングの設定

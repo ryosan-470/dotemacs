@@ -42,13 +42,22 @@
 (setq kill-whole-line t)
 ;; ファイル名補完 大文字小文字の区別をしない
 (setq completion-ignore-case t)
+;; 補完時に大文字小文字の区別をしない
+(setq read-buffer-completion-ignore-case t)
+(setq read-file-name-completion-ignore-case t)
 ;; 行番号設定
 (global-linum-mode t)
 ;; F6で行番号を表示
 (global-set-key [f6] 'linum-mode)
-(setq linum-format "%2d ")
+(setq linum-format "%3d ")
 ;; 同名ファイルバッファ名識別文字列の変更
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'post-forward-angle-branckets)
+;;(require 'uniquify)
+;;(setq uniquify-buffer-name-style 'post-forward-angle-branckets)
 ;; zshを使う
 (setq shell-file-name "/bin/zsh")
+;; 背景透過
+(set-frame-parameter nil 'alpha 80 )
+;; 起動メッセージの省略
+(setq inhibit-startup-message t)
+;; リージョンをハイライト
+(setq-default transient-mark-mode t)
