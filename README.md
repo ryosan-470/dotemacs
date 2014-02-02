@@ -1,22 +1,23 @@
-# 概要 #
+## 概要 ##
+どうみてもEmacsの設定だよね
 
-Emacsの設定ファイル群です．通常の人はdotfilesなどにまとめてしまい
-`.zshrc`などどともに管理している人が多いと思いますが私はEmacsの設定をい
-じることが多いので別にしました．
+## インストール手順 ##
 
-# 手順 #
+一般的なLinuxにある`wget`コマンドを用いて以下のシェルスクリプトをダウンロードします
 
-一般的なLinuxには`wget`コマンドがありますのでそれを用いてインストール用の
-シェルスクリプトをダウンロードします
+```
+$ wget https://raw.github.com/jtwp470/dotemacs/master/setup.sh
+```
 
-    $ wget https://raw.github.com/jtwp470/dotemacs/master/setup.sh
-
-あとは画面の指示に従いインストールしてください.
-
-# していること #
-
-本シェルスクリプトを利用して環境を構築すると`~/.emacs.d/`は
-`~/.dotconfig/dotemacs`にリンクされます.
+なおこのシェルスクリプトを用いると`$HOME/.dotconfig/dotemacs`に本体がインストールされます．さらに`$HOME/.emacs.d`がすでに存在する場合は`.emacs_bk`として元のフォルダをリネームします
 
 また外部リポジトリを参照しているため`git submodule init`と`git
 submodule update`が行われ外部リポジトリを取り込みます
+
+## Pythonユーザーについて ##
+Pythonの補完機能を用いる場合は以下のコマンドをインストール後に実行してください
+
+```
+$ sudo pip install epc jedi
+```
+
