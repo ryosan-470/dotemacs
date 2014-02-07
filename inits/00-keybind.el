@@ -61,3 +61,5 @@
 (setq inhibit-startup-message t)
 ;; リージョンをハイライト
 (setq-default transient-mark-mode t)
+;; yes or no to y-or-n
+ (defalias 'yes-or-no-p 'y-or-n-p)
