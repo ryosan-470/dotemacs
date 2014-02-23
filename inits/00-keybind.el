@@ -36,10 +36,8 @@
 (define-key global-map (kbd "M-1") 'delete-other-windows)
 ;; ウィンドウを上下に分割
 (define-key global-map (kbd "M-2") 'split-window-vertically)
-;; カーソルのあるウィンドウを閉じる
+;; ウィンドウを左右に分割
 (define-key global-map (kbd "M-3") 'split-window-horizontally)
-;; C-k 1回で行全体を削除
-;;(setq kill-whole-line t)
 ;;ファイル名補完 大文字小文字の区別をしない
 (setq completion-ignore-case t)
 ;; 補完時に大文字小文字の区別をしない
@@ -63,5 +61,5 @@
 (setq-default transient-mark-mode t)
 ;; yes or no to y-or-n
 (defalias 'yes-or-no-p 'y-or-n-p)
-;; C-c c でコンパイル
-(define-key global-map  (kbd "C-c c") 'compile)
+;; magit-status
+(define-key global-map (kbd "C-x g") 'magit-status)
