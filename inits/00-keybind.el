@@ -63,3 +63,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 ;; magit-status
 (define-key global-map (kbd "C-x g") 'magit-status)
+;; GC間隔の変更
+(setq gc-cons-threshold 134217728)
+;;ファイル名の補完で大文字小文字を無視
+(setq read-file-name-completion-ignore-case t)
