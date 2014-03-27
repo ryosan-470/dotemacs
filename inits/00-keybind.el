@@ -16,7 +16,7 @@
 ;; ウィンドウに収まらない時だけ括弧内を光らせる
 (setq show-paren-style 'mixed)
 ;; 現在行を光らせる
-(global-hl-line-mode t)
+;; (global-hl-line-mode t)
 ;; バックアップファイルを作らない
 (setq backup-inhibited t)
 ;; 終了時にオートセーブファイルを消す
@@ -67,3 +67,5 @@
 (setq gc-cons-threshold 134217728)
 ;;ファイル名の補完で大文字小文字を無視
 (setq read-file-name-completion-ignore-case t)
+;; C-c t シェルを開く
+(define-key global-map (kbd C-c t) 'shell-mode)
