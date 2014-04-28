@@ -16,6 +16,7 @@
     undo-tree
     undohist
     esup ;; emacs startup profiler
+    matlab-mode ;; matlab syntax
     ))
 
 (let ((not-installed (loop for x in installing-package-list
