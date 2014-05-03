@@ -68,4 +68,6 @@
 ;;ファイル名の補完で大文字小文字を無視
 (setq read-file-name-completion-ignore-case t)
 ;; C-c t シェルを開く
-(define-key global-map (kbd C-c t) 'shell-mode)
+(define-key global-map (kbd "C-c t") 'shell-mode)
+;; C-c SPC ace-jump-word-mode 先頭1文字を入れて
+(global-set-key (kbd "C-c SPC") 'ace-jump-mode)

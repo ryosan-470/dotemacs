@@ -6,6 +6,8 @@
 (defvar installing-package-list
   '(    
     magit
+    gitconfig-mode
+    gitignore-mode
     flycheck
     flycheck-color-mode-line
     google-translate
@@ -17,6 +19,9 @@
     undohist
     esup ;; emacs startup profiler
     matlab-mode ;; matlab syntax
+    rainbow-delimiters ;; カッコ色付け
+    smartparens
+    ace-jump-mode
     ))
 
 (let ((not-installed (loop for x in installing-package-list
