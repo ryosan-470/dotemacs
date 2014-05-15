@@ -22,6 +22,13 @@
     rainbow-delimiters ;; カッコ色付け
     smartparens
     ace-jump-mode
+    yasnippet
+    helm
+    ;; Python Auto Completion
+    jedi
+    deferred
+    epc
+    ctable
     ))
 
 (let ((not-installed (loop for x in installing-package-list
