@@ -29,6 +29,9 @@
     deferred
     epc
     ctable
+
+    anzu
+    visual-regexp
     ))
 
 (let ((not-installed (loop for x in installing-package-list
