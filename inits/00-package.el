@@ -32,6 +32,7 @@
 
     anzu
     visual-regexp
+    quickrun
     ))
 
 (let ((not-installed (loop for x in installing-package-list
