@@ -33,6 +33,7 @@
     anzu
     visual-regexp
     quickrun
+    yasnippet
     ))
 
 (let ((not-installed (loop for x in installing-package-list

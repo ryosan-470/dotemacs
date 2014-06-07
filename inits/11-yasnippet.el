@@ -1,10 +1,11 @@
 ;; 11-yasnippet.el (Dependences by AutoCompleteJava)
-(add-to-list 'load-path "~/.emacs.d/elisp/yasnippet")
+(add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-0.8.0")
+
 (require 'yasnippet)
 ;; save directory which make snippets
 (setq yas-snippet-dirs
       '("~/.emacs.d/snippets"
-        "~/.emacs.d/elisp/yasnippet/s"))
+        "~/.emacs.d/elpa/yasnippet-0.8.0/snippets"))
 (yas-global-mode 1)
 
 ;; 単語展開キーバインド (ver8.0から明記しないと機能しない)

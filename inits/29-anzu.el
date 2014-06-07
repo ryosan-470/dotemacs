@@ -1,4 +1,5 @@
 ;; 29-anzu.el
+(require 'anzu)
 (global-anzu-mode +1)
 
 (custom-set-variables

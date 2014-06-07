@@ -71,3 +71,5 @@
 (define-key global-map (kbd "C-c t") 'shell-mode)
 ;; C-c SPC ace-jump-word-mode 先頭1文字を入れて
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+;; C-x c f で byte-compile-file
+(global-set-key (kbd "C-x c f") 'byte-compile-file)

@@ -1,4 +1,3 @@
 ;; 17-jedi.el
-(require 'jedi)
-(add-hook 'python-mode-hook 'jedi:ac-setup)
+(add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
