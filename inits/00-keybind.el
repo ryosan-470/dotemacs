@@ -69,7 +69,7 @@
 (setq read-file-name-completion-ignore-case t)
 ;; C-c t シェルを開く
 (define-key global-map (kbd "C-c t") 'shell-mode)
-;; C-c SPC ace-jump-word-mode 先頭1文字を入れて
-(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 ;; C-x c f で byte-compile-file
 (global-set-key (kbd "C-c C-b") 'byte-compile-file)
+;; メニューバーを非表示
+(menu-bar-mode -1)
