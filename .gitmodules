@@ -7,6 +7,3 @@
 [submodule "snippets/java-mode"]
 	path = snippets/java-mode
 	url = https://github.com/nekop/yasnippet-java-mode.git
-[submodule "elisp/smartparens"]
-	path = elisp/smartparens
-	url = https://github.com/Fuco1/smartparens

@@ -9,6 +9,7 @@
     gitignore-mode
     flycheck
     flycheck-color-mode-line
+    flymake
     google-translate
     mode-compile
     markdown-mode
