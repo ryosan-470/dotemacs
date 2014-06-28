@@ -13,3 +13,15 @@
 (add-to-list 'auto-mode-alist '("\\.md" . flyspell-mode))
 (add-to-list 'auto-mode-alist '("\\.tex" . flyspell-mode))
 (add-hook 'text-mode-hook 'flyspell-mode)
+
+;; ac-ispell
+;; 3文字以上の場合, 補完するようにする
+(custom-set-variables
+  '(ac-ispell-requires 3))
+
+(eval-after-load "auto-complete"
+  '(progn
+      (ac-ispell-setup)))
+
+(add-hook 'git-commit-mode-hook 'ac-ispell-ac-setup)
+(add-hook 'markdown-mode-hook 'ac-ispell-ac-setup)
