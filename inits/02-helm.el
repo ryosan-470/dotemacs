@@ -8,3 +8,9 @@
 (global-set-key (kbd "C-c b")   'helm-descbinds)      ;;; キーバインド表示
 (global-set-key (kbd "C-c s")   'helm-ag)
 
+(when (require 'popwin)
+  (setq helm-samewindow nil)
+  (setq display-buffer-function 'popwin:display-buffer)
+  (setq popwin:special-display-config '(("*compilatoin*"  :noselect t)
+					("helm" :regexp t :height 0.4)
+					)))

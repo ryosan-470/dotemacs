@@ -34,6 +34,10 @@
     visual-regexp
     quickrun
     yasnippet
+    auto-complete
+    auto-complete-clang
+    pkg-info
+    popwin
     ))
 
 (let ((not-installed (loop for x in installing-package-list
