@@ -5,3 +5,4 @@ tramp
 undohist/
 *.elc
 .python-environments
+.cask

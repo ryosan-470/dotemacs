@@ -15,9 +15,9 @@
 (add-hook 'text-mode-hook 'flyspell-mode)
 
 ;; ac-ispell
-;; 3文字以上の場合, 補完するようにする
+;; 6文字以上の場合, 補完するようにする
 (custom-set-variables
-  '(ac-ispell-requires 3))
+  '(ac-ispell-requires 6))
 
 (eval-after-load "auto-complete"
   '(progn
