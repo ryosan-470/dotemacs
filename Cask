@@ -3,7 +3,6 @@
 
 (depends-on "ac-ispell")
 (depends-on "ace-jump-mode")
-(depends-on "ajc-java-complete")
 (depends-on "anzu")
 (depends-on "auto-complete")
 (depends-on "auto-complete-clang")

@@ -7,9 +7,6 @@
 [submodule "snippets/java-mode"]
 	path = snippets/java-mode
 	url = https://github.com/nekop/yasnippet-java-mode.git
-[submodule "elisp/python-mode"]
-	path = elisp/python-mode
-	url = https://github.com/emacsmirror/python-mode.git
 [submodule "elisp/yatex"]
 	path = elisp/yatex
 	url = https://github.com/emacsmirror/yatex.git
