@@ -1,4 +1,6 @@
-;;22-google-translate.el
+;;; 22-google-translate.el --- Use translate.google.com at Emacs
+;;; Commentary:
+;;; Code:
 (require 'google-translate)
 ;; keybind
 ;; C-x C-t で選択項目を翻訳
@@ -16,3 +18,4 @@
 (setq popwin:popup-window-position 'bottom)
 ;; google-translate.elの翻訳バッファをポップアップで表示させる
 (push '("*Google Translate*") popwin:special-display-config)
+;;; 22-google-translate.el ends here

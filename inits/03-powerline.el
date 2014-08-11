@@ -1,4 +1,6 @@
-;;; Emacs for Powerline
+;;; 03-powerline.el --- Emacs for Powerline
+;;; Commentary:
+;;; Code:
 (line-number-mode t)   ;;; 行番号表示
 (column-number-mode t) ;;; 列番号表示
 (setq-default mode-line-format '(
@@ -35,4 +37,4 @@
 (make/set-face 'mode-line-5-fg "#005f5f"  "#87d7ff"  'normal)
 (make/set-face 'mode-line-5-bg "#0087af"  "#87d7ff"  'normal)
 (make/set-face 'mode-line-6-fg "#005f5f"  "#87d7ff"  'bold)
-
+;;; 03-powerline.el ends here

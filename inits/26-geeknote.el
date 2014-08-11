@@ -1,5 +1,6 @@
-;; 26-geeknote.el
-;; using geeknote on Emacs
+;;; 26-geeknote.el --- using geeknote on Emacs
+;;; Commentary:
+;;; Code:
 (defun geeknote-mode ()
   (interactive)
   (eshell-command "python ~/bin/geeknote/geeknote/geeknote.py settings --editor /usr/local/Cellar/emacs/24.3/bin/emacsclient")
@@ -34,3 +35,4 @@
   (eshell-command
    (format "python ~/bin/geeknote/geeknote/geeknote.py find --search %s" keyword))
   )
+;;; 26-geeknote.el ends here

@@ -239,7 +239,7 @@ function main() {
 	5)
 	    show_status;;
 	*)
-	    exit 0
+	    main
     esac
 }
 

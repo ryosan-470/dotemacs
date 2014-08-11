@@ -1,0 +1,12 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: setup
+# key: h
+# binding: direct-keybinding
+# --
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+  $1
+  return EXIT_SUCCESS;
+}

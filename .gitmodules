@@ -10,3 +10,6 @@
 [submodule "elisp/yatex"]
 	path = elisp/yatex
 	url = https://github.com/emacsmirror/yatex.git
+[submodule "elisp/emacs-codic"]
+	path = elisp/emacs-codic
+	url = https://github.com/syohex/emacs-codic.git

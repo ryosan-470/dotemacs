@@ -6,3 +6,4 @@ undohist/
 *.elc
 .python-environments
 .cask
+clang-complete

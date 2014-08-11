@@ -1,4 +1,6 @@
-;; 00-keybind.el
+;;; 00-keybind.el -- Config for Emacs keybinds
+;;; Commentary:
+;;; Code:
 ;; load-path
 (setq load-path (cons "~/.emacs.d/elisp" load-path))
 (setq load-path (cons "~/.emacs.d/elpa" load-path))
@@ -73,3 +75,4 @@
 (global-set-key (kbd "C-c C-b") 'byte-compile-file)
 ;; メニューバーを非表示
 (menu-bar-mode -1)
+;;; 00-keybind.el ends here

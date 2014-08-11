@@ -1,3 +1,6 @@
+;;; 15-flymake.el -- Flymake
+;;; Commentary:
+;;; Code:
 ;; Flymake for java
 (require 'flymake)
 (defun flymake-java-init ()
@@ -10,3 +13,4 @@
 (push '("\\.java$" flymake-java-init) flymake-allowed-file-name-masks)
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 (add-hook 'java-mode-hook '(lambda () (flymake-mode t)))
+;;; 15-flymake.el ends here

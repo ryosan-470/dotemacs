@@ -1,7 +1,6 @@
 (source gnu)
 (source melpa)
 
-(depends-on "ac-ispell")
 (depends-on "ace-jump-mode")
 (depends-on "anzu")
 (depends-on "auto-complete")
@@ -65,3 +64,5 @@
 (depends-on "visual-regexp")
 (depends-on "web-mode")
 (depends-on "yasnippet")
+
+(depends-on "tuareg") ;; Emacs OCaml Mode

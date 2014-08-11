@@ -1,3 +1,6 @@
+;;; 13-yatex.el -- YaTeX for Emacs LaTeX Mode
+;;; Commentary:
+;;; Code:
 ;; Add library path
 (add-to-list 'load-path "~/.emacs.d/elisp/yatex")
 ;; YaTeX mode
@@ -19,3 +22,4 @@
 ;;; 3 = EUC (EUC-JP)
 ;;; 4 = UTF-8
 (setq YaTeX-kanji-code 4)
+;;; 13-yatex.el ends here
