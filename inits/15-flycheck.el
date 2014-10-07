@@ -5,9 +5,9 @@
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (setq flycheck-check-syntax-automatically '(mode-enabled save))
 ;;; keybind
-(global-set-key (kbd "C-c C-p") 'flycheck-previous-error)
-(global-set-key (kbd "C-c C-n") 'flycheck-next-error)
-
+(global-set-key (kbd "C-c p") 'flycheck-previous-error)
+(global-set-key (kbd "C-c n") 'flycheck-next-error)
+(global-set-key (kbd "C-c l") 'flycheck-error-list)
 ;;; flycheck-pos-tip
 (eval-after-load 'flycheck
   '(custom-set-variables
