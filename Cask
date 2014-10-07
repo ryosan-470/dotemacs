@@ -22,6 +22,7 @@
 (depends-on "f")
 (depends-on "flycheck")
 (depends-on "flycheck-cask")
+(depends-on "flycheck-pos-tip")
 (depends-on "git-commit-mode")
 (depends-on "git-rebase-mode")
 (depends-on "gitconfig-mode")
