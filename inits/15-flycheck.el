@@ -7,12 +7,13 @@
 ;;; keybind
 (global-set-key (kbd "C-c p") 'flycheck-previous-error)
 (global-set-key (kbd "C-c n") 'flycheck-next-error)
-(global-set-key (kbd "C-c l") 'flycheck-error-list)
+(global-set-key (kbd "C-c l") 'flycheck-list-errors)
 ;;; flycheck-pos-tip
 (eval-after-load 'flycheck
   '(custom-set-variables
    '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
 
-;; Python
+;; Hook
 (add-hook 'python-mode-hook 'flycheck-mode)
+(add-hook 'web-mode-hook    'flycheck-mode)
 ;;; 15-flycheck.el ends here

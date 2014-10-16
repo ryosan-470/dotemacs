@@ -1,6 +1,7 @@
 (source gnu)
 (source melpa)
 
+(depends-on "init-loader")
 (depends-on "ace-jump-mode")
 (depends-on "anzu")
 (depends-on "auto-complete")
@@ -21,7 +22,6 @@
 (depends-on "expand-region")
 (depends-on "f")
 (depends-on "flycheck")
-(depends-on "flycheck-cask")
 (depends-on "flycheck-pos-tip")
 (depends-on "git-commit-mode")
 (depends-on "git-rebase-mode")
@@ -33,7 +33,6 @@
 (depends-on "helm-descbinds")
 (depends-on "htmlize")
 (depends-on "idle-highlight-mode")
-(depends-on "init-loader")
 (depends-on "jedi")
 (depends-on "magit")
 (depends-on "mark-multiple")
@@ -52,7 +51,6 @@
 (depends-on "projectile")
 (depends-on "python-environment")
 (depends-on "quickrun")
-(depends-on "rainbow-delimiters")
 (depends-on "recentf-ext")
 (depends-on "s")
 (depends-on "shut-up")
@@ -67,3 +65,6 @@
 (depends-on "yasnippet")
 
 (depends-on "tuareg") ;; Emacs OCaml Mode
+(depends-on "multi-term") ;; multi-term is better than ansi-term
+(depends-on "rainbow-delimiters")
+(depends-on "key-combo") ;; a fork of smartchr.el
