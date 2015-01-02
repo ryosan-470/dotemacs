@@ -11,5 +11,4 @@
 
 (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
 (sp-local-pair 'markdown-mode "`" nil :actions '(insert))
-
 ;;; 14-smartparens.el ends here

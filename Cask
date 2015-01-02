@@ -31,6 +31,7 @@
 (depends-on "helm")
 (depends-on "helm-ag")
 (depends-on "helm-descbinds")
+(depends-on "helm-gtags")
 (depends-on "htmlize")
 (depends-on "idle-highlight-mode")
 (depends-on "jedi")
@@ -67,4 +68,4 @@
 (depends-on "tuareg") ;; Emacs OCaml Mode
 (depends-on "multi-term") ;; multi-term is better than ansi-term
 (depends-on "rainbow-delimiters")
-(depends-on "key-combo") ;; a fork of smartchr.el
+(depends-on "emmet-mode")

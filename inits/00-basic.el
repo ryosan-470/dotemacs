@@ -9,10 +9,8 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 ;; (load-theme 'manoj-dark t)
 ;;; codic
-(add-to-list 'load-path "~/.emacs.d/elisp/emacs-codic")
+(add-to-list 'load-path "~/.emacs.d/elisp/emacs-codic/")
 (require 'codic)
-;;; TAB -> 4 Space
-(setq-default tab-width 4 indent-tabs-mode nil)
 ;; カーソル点滅の停止
 (blink-cursor-mode 0)
 ;; 対応するカッコを光らせる
@@ -53,5 +51,11 @@
 (setq gc-cons-threshold 134217728)
 ;; メニューバーを非表示
 (menu-bar-mode -1)
-
+;; インデント関連の設定
+(setq default-tab-width 4)
+(setq c-basic-offset 4)
+(setq c-default-style '((java-mode . "java") (python-mode . "python") (other . "linux")))
+(setq-default indent-tabs-mode nil) ;; スペースを使う
+;; 自動インデント
+(define-key global-map (kbd "RET") 'newline-and-indent)
 ;;; 00-basic.el ends here
