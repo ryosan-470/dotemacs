@@ -8,9 +8,6 @@
 ;; Emacs Theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 ;; (load-theme 'manoj-dark t)
-;;; codic
-(add-to-list 'load-path "~/.emacs.d/elisp/emacs-codic/")
-(require 'codic)
 ;; カーソル点滅の停止
 (blink-cursor-mode 0)
 ;; 対応するカッコを光らせる

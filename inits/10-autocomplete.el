@@ -11,12 +11,6 @@
   (custom-set-variables '(ac-ignore-case nil))
   (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict"))
 
-;; Auto Complete for Java
-(use-package auto-java-complete
-  :load-path ("elisp/auto-java-complete/")
-  :mode (("\\.java\\'" . java-mode))
-  :init (add-hook 'java-mode-hook 'ajc-java-complete-mode))
-
 ;; Auto Complete for C/C++
 (use-package auto-complete-clang-async
   :load-path ("elisp/")
@@ -30,4 +24,10 @@
     (add-hook 'auto-complete-mode-hook 'ac-common-setup)
     (global-auto-complete-mode t))
   (my-ac-config))
+
+;; Auto Complete for Java (use-packageではうまく動いてくれない)
+(add-to-list 'load-path "~/.emacs.d/elisp/auto-java-complete/")
+(require 'ajc-java-complete-config)
+(add-hook 'java-mode-hook 'ajc-java-complete-mode)
+(add-hook 'find-file-hook 'ajc-4-jsp-find-file-hook)
 ;;; 10-autocomplete.el ends here
