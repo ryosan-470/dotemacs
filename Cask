@@ -70,3 +70,4 @@
 (depends-on "multi-term") ;; multi-term is better than ansi-term
 (depends-on "rainbow-delimiters")
 (depends-on "emmet-mode")
+(depends-on "latex-math-preview")
