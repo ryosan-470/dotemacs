@@ -15,7 +15,7 @@ I am Emacser. I cannot use Vim. The Emacs is the best editor all over the world!
 
 ## Requirements
 
-* Emacs 24
+* Emacs 24.4 (not 24.3)
 * Ricty Powerline ([vim-powerline](https://github.com/Lokaltog/vim-powerline/tree/develop/fontpatcher) is patched.)
 
 ---

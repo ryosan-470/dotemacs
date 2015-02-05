@@ -55,4 +55,24 @@
 (setq-default indent-tabs-mode nil) ;; スペースを使う
 ;; 自動インデント
 (define-key global-map (kbd "RET") 'newline-and-indent)
+;; 余分な空白をハイライト
+(setq-default show-trailing-whitespace t)
+;; 以下に上げられているモードでは無効化する
+(defun my/disable-trailing-mode-hook ()
+  "Disable show tail whitespace."
+  (setq show-trailing-whitespace nil))
+
+(defvar my/disable-trailing-modes
+  '(comint-mode
+    eshell-mode
+    eww-mode
+    term-mode
+    ansi-term
+    twittering-mode))
+
+(mapc
+ (lambda (mode)
+   (add-hook (intern (concat (symbol-name mode) "-hook"))
+             'my/disable-trailing-mode-hook))
+  my/disable-trailing-modes)
 ;;; 00-basic.el ends here
