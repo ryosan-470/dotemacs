@@ -74,5 +74,7 @@
  (lambda (mode)
    (add-hook (intern (concat (symbol-name mode) "-hook"))
              'my/disable-trailing-mode-hook))
-  my/disable-trailing-modes)
+ my/disable-trailing-modes)
+;; *.zsh ファイルはsh-modeで開く
+(add-to-list 'auto-mode-alist '("\\.zsh\\'" . sh-mode))
 ;;; 00-basic.el ends here
