@@ -71,3 +71,4 @@
 (depends-on "rainbow-delimiters")
 (depends-on "emmet-mode")
 (depends-on "latex-math-preview")
+(depends-on "whitespace-cleanup-mode")
