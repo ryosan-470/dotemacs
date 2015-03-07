@@ -1,0 +1,12 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: setup
+# key: h
+# binding: direct-keybinding
+# --
+#include <iostream>
+using namespace std;
+
+int main(void) {
+  $0
+  return 0;
+}
