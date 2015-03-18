@@ -1,7 +1,7 @@
 ;;; 29-anzu.el --- Chrome の検索結果表示みたいな感じ
 ;;; Commentary:
 ;;; Code:
-(require 'anzu)
+;; (require 'anzu)
 (global-anzu-mode +1)
 
 (custom-set-variables

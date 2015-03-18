@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 ;;; 拡張子
-(require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.jsp\\'"  . web-mode))
 (add-to-list 'auto-mode-alist '("\\.gsp\\'"  . web-mode))
 (setq web-mode-auto-pairs t)

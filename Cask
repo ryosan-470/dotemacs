@@ -1,7 +1,9 @@
 (source gnu)
 (source melpa)
+(source marmalade)
 
 (depends-on "init-loader")
+(depends-on "pallet")
 (depends-on "ace-jump-mode")
 (depends-on "anzu")
 (depends-on "auto-complete")
@@ -43,7 +45,6 @@
 (depends-on "multiple-cursors")
 (depends-on "nyan-mode")
 (depends-on "package-build")
-(depends-on "pallet")
 (depends-on "pkg-info")
 (depends-on "popup")
 (depends-on "popwin")

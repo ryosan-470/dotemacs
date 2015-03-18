@@ -1,7 +1,6 @@
 ;;; 19-markdownmode.el --- Emacs Markdown Mode
 ;;; Commentary:
 ;;; Code:
-(require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.text\\'"      . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'"  . markdown-mode))
 ;;; Open markdown file to set Github flavored markdown

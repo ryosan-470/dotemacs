@@ -1,7 +1,7 @@
 ;;; cocoa-emacs-latexmathpreview.el --- latex-math-preview for Mac OSX
 ;;; Commentary:
 ;;; Code:
-(require 'latex-math-preview)
+;; (require 'latex-math-preview)
 
 (autoload 'latex-math-preview-expression "latex-math-preview" nil t)
 (autoload 'latex-math-preview-insert-symbol "latex-math-preview" nil t)

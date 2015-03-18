@@ -3,29 +3,13 @@
 ;;; Code:
 ;; (define-minor-mode overriding-minor-mode
 ;;    "" t "" `((, (kbd "C-c h") . helm-mini))) ;; どんなマイナーモードにもC-c hを取られないようにする
-(use-package helm
-  :bind (("C-c h"   . helm-mini)
-         ("C-x C-f" . helm-find-files)
-         ("M-y"     . helm-show-kill-ring)
-         ("C-c i"   . helm-imenu)
-         ("C-c b"   . helm-buffers-list)
-         ("C-c k"   . helm-descbinds)
-         ("C-c s"   . helm-ag)
-         ("M-x"     . helm-M-x))
-  :config)
-
-(use-package helm-gtags
-  :init
-  (add-hook 'c-mode-hook 'helm-gtags-mode)
-  (add-hook 'c++-mode-hook 'helm-gtags-mode)
-  (add-hook 'ruby-mode-hook 'helm-gtags-mode)
-  (add-hook 'python-mode-hook 'helm-gtags-mode)
-  (bind-keys :map mode-specific-map
-             ("M-t" . helm-gtags-find-tag)
-             ("M-r" . helm-gtags-find-rtag)
-             ("M-s" . helm-gtags-find-symbol)
-             ("C-t" . helm-gtags-pop-stack))
-  :config
-  (setq helm-gtags-path-style 'root)
-  (setq helm-gtags-auto-update t))
+;; (require 'helm)
+(define-key global-map (kbd "C-c h") 'helm-mini)
+(define-key global-map (kbd "C-x C-f") 'helm-find-files)
+(define-key global-map (kbd "M-y")   'helm-show-kill-ring)
+(define-key global-map (kbd "C-c i") 'helm-imenu)
+(define-key global-map (kbd "C-c b") 'helm-buffer-list)
+(define-key global-map (kbd "C-c k") 'helm-descbinds)
+(define-key global-map (kbd "C-c s") 'helm-ag)
+(define-key global-map (kbd "M-x")   'helm-M-x)
 ;;; 02-helm.el ends here

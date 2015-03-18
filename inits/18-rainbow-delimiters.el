@@ -1,7 +1,7 @@
 ;;; 18-rainbow-delimiters.el --- Colorful showing of ()
 ;;; Commentary:
 ;;; Code:
-(require 'rainbow-delimiters)
+;; (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 ;;; カッコの色を強調する設定
 (require 'cl-lib)

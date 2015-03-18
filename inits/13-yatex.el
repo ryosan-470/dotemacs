@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 (add-to-list 'load-path "~/.emacs.d/elisp/yatex")
-(require 'yatex)
 (setq auto-mode-alist
       (append '(("\\.tex$" . yatex-mode)
                 ("\\.ltx$" . yatex-mode)

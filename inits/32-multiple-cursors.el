@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; https://github.com/magnars/multiple-cursors.el
 ;;; Code:
-(require 'multiple-cursors)
+;; (require 'multiple-cursors)
 (define-key global-map (kbd "C-c .") 'mc/mark-next-like-this)
 (define-key global-map (kbd "C-c ,") 'mc/mark-previous-lines)
 (define-key global-map (kbd "C-c :") 'mc/mark-all-like-this)

@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 ;;; For Python
-(require 'python-mode)
+;; (require 'python-mode)
 (add-to-list 'auto-mode-alist '("\\.py$"  . python-mode))
 ;; indent
 (add-hook 'python-mode-hook
@@ -23,7 +23,7 @@
 ;; (require 'ac-python)
 ;; (add-to-list 'ac-modes 'python-2-mode)
 ;; Jedi.el - Python auto-completion for Emacs
-(require 'jedi)
+;; (require 'jedi)
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 ;;; 16-script-lang.el ends here

@@ -17,7 +17,7 @@
 
 ;; Auto Complete for C/C++
 (add-to-list 'load-path "~/.emacs.d/elisp/emacs-clang-complete-async")
-(require 'auto-complete-clang-async)
+;; (require 'auto-complete-clang-async)
 
 (defun ac-cc-mode-setup ()
   (setq ac-clang-complete-executable "~/.emacs.d/clang-complete")
@@ -31,7 +31,7 @@
 
 ;; Auto Complete for Java (use-packageではうまく動いてくれない)
 (add-to-list 'load-path "~/.emacs.d/elisp/auto-java-complete/")
-(require 'ajc-java-complete-config)
+;; (require 'ajc-java-complete-config)
 (add-hook 'java-mode-hook 'ajc-java-complete-mode)
-(add-hook 'find-file-hook 'ajc-4-jsp-find-file-hook)
+;; (add-hook 'find-file-hook 'ajc-4-jsp-find-file-hook)
 ;;; 10-autocomplete.el ends here

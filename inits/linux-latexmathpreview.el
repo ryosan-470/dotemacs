@@ -2,7 +2,7 @@
 ;;; linux-latexmathpreview.el --- latex-math-preview for Linux distribution
 ;;; Commentary:
 ;;; Code:
-(require 'latex-math-preview)
+;; (require 'latex-math-preview)
 ;; YaTeX-modeの状態で M-x latex-math-preview-*** としてプレビューを実行します
 (autoload 'latex-math-preview-expression "latex-math-preview" nil t) ;; 画面でpngのプレビューをします
 (autoload 'latex-math-preview-insert-symbol "latex-math-preview" nil t) ;; 挿入したいシンボルを画像で選択できます

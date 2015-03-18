@@ -1,7 +1,7 @@
 ;;; linux-yatex.el --- YaTeX for Linux distribution
 ;;; Commentary:
 ;;; Code:
-(require 'yatex)
+;; (require 'yatex)
 (add-to-list 'load-path "~/.emacs.d/elisp/yatex")
 (setq auto-mode-alist
       (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))

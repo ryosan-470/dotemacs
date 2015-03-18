@@ -1,0 +1,1 @@
+../tests/test-inits-el-byc.sh
