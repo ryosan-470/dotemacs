@@ -1,4 +1,7 @@
-;; YaTeX Settings
+;;; linux-yatex.el --- YaTeX for Linux distribution
+;;; Commentary:
+;;; Code:
+(require 'yatex)
 (add-to-list 'load-path "~/.emacs.d/elisp/yatex")
 (setq auto-mode-alist
       (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
@@ -8,3 +11,4 @@
 ;; Preview
 (setq dvi2-command "gnome-open")
 (setq bibtex-command "pbibtex")
+;;; linux-yatex.el ends here

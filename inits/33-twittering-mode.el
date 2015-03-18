@@ -1,6 +1,7 @@
 ;;; 33-twittering-mode.el --- Emacs Twitter mode
 ;;; Commentary:
 ;;; Code:
+(require 'twittering-mode)
 (setq twittering-use-master-password t)
 (setq twittering-use-ssl t)
 (setq twittering-icon-mode t)             ;; show icons

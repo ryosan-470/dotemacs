@@ -37,7 +37,6 @@
 (depends-on "idle-highlight-mode")
 (depends-on "jedi")
 (depends-on "magit")
-(depends-on "mark-multiple")
 (depends-on "markdown-mode")
 (depends-on "matlab-mode")
 (depends-on "molokai-theme")
@@ -72,3 +71,4 @@
 (depends-on "emmet-mode")
 (depends-on "latex-math-preview")
 (depends-on "whitespace-cleanup-mode")
+(depends-on "python-mode")

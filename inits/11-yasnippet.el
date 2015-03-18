@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 ;; save directory which make snippets
+(require 'yasnippet)
 (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 (yas-global-mode 1)
 

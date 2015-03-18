@@ -1,5 +1,8 @@
-;; cocoa-emacs-yatex.el
+;;; cocoa-emacs-yatex.el --- YaTeX for OSX
+;;; Commentary:
+;;; Code:
 ;; Add library path
+(require 'yatex)
 (add-to-list 'load-path "~/.emacs.d/elisp/yatex")
 ;; YaTeX mode
 (setq auto-mode-alist
@@ -10,3 +13,4 @@
 ;; use Preview.app
 (setq dvi2-command "open -a Preview")
 (setq bibtex-command "pbibtex")
+;;; cocoa-emacs-yatex.el ends here
