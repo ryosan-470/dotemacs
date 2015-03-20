@@ -2,5 +2,5 @@
 ;;; Commentary:
 ;;; Code:
 (cua-mode t)
-(global-set-key (kbd "C-x SPC") 'cua-set-rectangle-mark)
+(setq cua-enable-cua-keys nil)
 ;;; 31-cua-mode.el ends here

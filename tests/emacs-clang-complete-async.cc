@@ -1,3 +1,7 @@
+/*
+ * This source code is test for emacs-clang-complete-async.
+ * Example:: input std:: below auto complete
+ */
 #include <vector>
 #include <algorithm>
 #include <numeric>

@@ -2,15 +2,15 @@
 ;;; Commentary:
 ;;; Code:
 ;;; For Python
-;; (require 'python-mode)
+(autoload 'python-mode "python-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.py$"  . python-mode))
 ;; indent
 (add-hook 'python-mode-hook
           '(lambda ()
              (setq indent-tabs-mode nil)
-             (setq indent-level 4)
-             (setq python-indent 4)
-             (setq tab-width 4)))
+             (setq indent-level 2)
+             (setq python-indent 2)
+             (setq tab-width 2)))
 
 ;; 関数一覧の表示
 ;; Qiita: EmacsのPython開発環境構築メモ

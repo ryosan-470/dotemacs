@@ -10,4 +10,6 @@
 ;; (setq default-buffer-file-coding-system 'utf-8)
 (set-buffer-file-coding-system 'utf-8)
 (set-clipboard-coding-system 'utf-8)
+(setq coding-system-for-read 'utf-8)
+(setq coding-system-for-write 'utf-8)
 ;;; 99-encoding.el ends here

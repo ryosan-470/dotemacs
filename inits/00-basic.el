@@ -79,4 +79,5 @@
 (add-to-list 'auto-mode-alist '("\\.zsh\\'" . sh-mode))
 ;; whitespace-cleanup-mode
 (global-whitespace-cleanup-mode t)
+(setq global-semanticdb-minor-mode nil)
 ;;; 00-basic.el ends here
