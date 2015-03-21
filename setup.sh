@@ -71,22 +71,16 @@ function format() {
 
 # [DEPLOY] Clone git repository.
 function fetch() {
-    _branch=${1:"master"}
+    _branch=${1:-"master"}
     REPO="jtwp470/dotemacs.git"
-    GIT_CLONE="git clone --recursive -b ${_branch} --single-branch"
-    COMMAND="${GIT_CLONE} git@github.com:${REPO} ${INSTALL_PATH}"
-    ${COMMAND}
+    GIT_CLONE="git clone -b ${_branch} --single-branch"
+    # COMMAND="${GIT_CLONE} git@github.com:${REPO} ${INSTALL_PATH} --recursive"
+    COMMAND="${GIT_CLONE} https://github.com/${REPO} ${INSTALL_PATH} --recursive"
     format "${COMMAND}" info
+    ${COMMAND}
     if [ $? -ne 0 ]; then
-        format "Failed to clone via SSH. Try to use https" info
-        COMMAND="${GIT_CLONE} https://github.com/${REPO} ${INSTALL_PATH}"
-        ${COMMAND}
-        format "${COMMAND}" info
-
-        if [ -$? -ne 0 ]; then
-            format "Error: Cannot clone repository. Exit" fail
-            return 1
-        fi
+        format "Error: Cannot clone repository. Exit" fail
+        return 1
     fi
     return 0;
 }
@@ -96,15 +90,15 @@ function symlink() {
     if [ -e ${DEMACS} ]; then
         # 既存の.emacs.dは名前を変えてバックアップ
         RNAME=".emacs.d_bk_`date +%Y%m`"
-        mv ${DEMACS} ${HOME}/${RENAME}
+        mv ${DEMACS} ${HOME}/${RNAME}
         format "Rename .emacs.d to ${RNAME}" info
     fi
-
+    format "Make symlink ${INSTALL_PATH} to ${DEMACS}" success
     ln -s ${INSTALL_PATH} ${DEMACS}
 
     # make symbolic link to .java_base.tag
     ln -s ${DEMACS}/.java_base.tag ${HOME}/.java_base.tag
-
+    format "Make symlink java_base.tag" success
     return 0
 }
 
@@ -119,23 +113,24 @@ function install_cask() {
     format "Success to install cask" success
     format "Please add to path to use cask command" info
     format "export PATH=${HOME}/.cask/bin:${PATH}"
+    rm go  # 残骸を削除
     return 0
 }
 
 # [INIT] auto-complete-clang-async
 function install_acca() {
     OS=`uname`
-    if [ "OS" = "Linux" ]; then
+    if [ ${OS} = "Linux" ]; then
         # Ubuntuであると仮定する
         format "install dependences" info
         sudo apt-get install clang libclang-dev llvm-dev
-        cd ${DEMACS}/elisp/emacs/clang-complete-async
+        cd ${DEMACS}/elisp/emacs-clang-complete-async
         # make LLVM_CONFIG=llvm-config-3.4
         make
-    elif [ "OS" = "Darwin" ]; then
+    elif [ ${OS} = "Darwin" ]; then
         # Mac OSX
         brew install emacs-clang-complete-async
-        ln -s /usr/local/Cellar/emacs-clang-complete-async/clang-complete ~/.emacs.d/elisp/emacs-clang-complete-async/clang-complete
+        ln -s `brew --prefix`/Cellar/emacs-clang-complete-async/clang-complete ~/.emacs.d/elisp/emacs-clang-complete-async/clang-complete
     else
         format "Not supported your OS" fail
         return 1
@@ -147,8 +142,8 @@ function install_acca() {
 # Deploy
 function deploy() {
     format "Starting installation for dotemacs" info
-    _branch=${1:"master"}
-    fetch ${_branch}
+    _branch=${1:-"master"}
+    fetch ${_branch} || exit 1
     format "Make symlink" info
     symlink
     format "Cask install" info
@@ -160,10 +155,11 @@ function deploy() {
 function init() {
     format "initialize" info
     pip install -r ${DEMACS}/requirements.txt
-    format "installing cask" info
-    install_cask
     export PATH="${HOME}/.cask/bin/cask:${PATH}"
-    cask install && cask update && cask upgrade
+    format "Cask updateing..." info
+    cd ${DEMACS}
+    cask="${HOME}/.cask/bin/cask"
+    (${cask} install && ${cask} update && ${cask} upgrade) || (format "Failed to use cask command" && exit 1)
     return 0
 }
 
@@ -177,9 +173,6 @@ function tests() {
 OPT=$1
 
 case ${OPT} in
-    "help")
-        echo "help"
-        exit 0;;
     "deploy")
         deploy && exit 0;;
     "init")
@@ -191,12 +184,42 @@ case ${OPT} in
     "install-acca")
         install-acca && exit 0;;
     "install-travis")
-        deploy "feature/travis"
+        deploy "dev"
         init
         install_acca
         tests
         exit 0;;
-    *)
-        echo "No options"
+    "help")
+        cat <<_EOT_
+setup.sh [options]
+
+Version: ${VERSION}
+
+The setup.sh for emacs configuration setup scripts.
+
+[OPTIONS]:
+
+- all            Default installation command. Deploy, init and install-acca command
+- deploy         Deploy. Clone repository, make symlink and install cask
+- init           Initialize. Emacs installation via cask.
+- test           Test section. byte compile  ~/.emacs.d/inits/*.el.
+- install-cask   Only to install cask
+- install-acca   Only to install emacs-clang-complete-async.
+- install-travis For Travis CI test
+- help           This section.
+_EOT_
+        ;;
+    "all")
+        format "Installing all" info
+        format "Start deploying" info
+        deploy || (format "[FAILED] deploying..." fail && exit 1)
+        format "Initialize" info
+        init   || (format "[FAILED] initialize..." fail && exit 1)
+        format "Starting installation to emacs-clang-complete-async" info
+        install_acca
         exit 0;;
+    *)
+      format "Option is necessary." info
+      format "view help. setup.sh help" info
+      exit 0;;
 esac
