@@ -1,0 +1,7 @@
+# requirements.txt for using Emacs
+# for Flycheck
+flake8
+# pylint
+# auto complete
+epc
+jedi

@@ -8,8 +8,10 @@
 ##
 ###################################################################
 TARGET_DIR="${HOME}/.dotconfig"       # 保存先
-VERSION="0.03 Beta"
+VERSION="1.00"
 
+DEMACS="${HOME}/.emacs.d"
+INSTALL_PATH="${HOME}/.dotconfig/dotemacs"
 # echo色付け Usage echowcl text [COLOR] [TYPE]
 function echowcl() {
     TEXT="${1}"
@@ -67,210 +69,134 @@ function format() {
     fi
 }
 
+# [DEPLOY] Clone git repository.
 function fetch() {
-    cd ${TARGET_DIR}
-    REPO=$1
-    USER='jtwp470'
+    _branch=${1:"master"}
+    REPO="jtwp470/dotemacs.git"
+    GIT_CLONE="git clone --recursive -b ${_branch} --single-branch"
+    COMMAND="${GIT_CLONE} git@github.com:${REPO} ${INSTALL_PATH}"
+    ${COMMAND}
+    format "${COMMAND}" info
+    if [ $? -ne 0 ]; then
+        format "Failed to clone via SSH. Try to use https" info
+        COMMAND="${GIT_CLONE} https://github.com/${REPO} ${INSTALL_PATH}"
+        ${COMMAND}
+        format "${COMMAND}" info
 
-    format "Starting fetch ${REPO} repository" info
-
-    if [ ! -e ${TARGET_DIR}/${REPO} ]; then
-            git clone git@github.com:${USER}/${REPO}.git
-
-            if [ $? -ne 0 ]; then
-                format "Can't fetch to use SSH. Challenge to fetch to use https" fail
-                git clone https://github.com/${USER}/${REPO}.git
-            fi
-
-            if [ $? -ne 0 ]; then
-                format "Can't fetch to use https. Please check your network configuration or run script one more" fail
-                format "Fatal Error! Exit script" fail
-                exit 1
-            fi
-    else
-            format "We didn't fetch repo because ${TARGET}/${REPO} exists" warning
-
-    fi
-    return 0
-}
-
-function emacs_clang() {
-    # generate_clang_complete
-    CLANG_COMPLETE=${HOME}/.emacs.d/elisp/emacs-clang-complete-async
-    cd $CLANG_COMPLETE
-    make
-    ln -s ${CLANG_COMPLETE}/clang-complete ${HOME}/.emacs.d/
-}
-function initialize() {
-    format "Check to exist ${TARGET_DIR}"
-    if [ ! -e ${TARGET_DIR} ]; then
-            mkdir ${TARGET_DIR}
-            format "Make ${TARGET_DIR}" success
-    fi
-}
-
-function install_dotemacs() {
-    initialize
-    fetch dotemacs
-
-    DEMACS="${TARGET_DIR}/dotemacs"
-
-    # 既存の.emacs.dは名前を変えてバックアップ
-    if [ -e ${HOME}/.emacs.d ]; then
-            RENAME=".emacs.d_bk_`date +%Y%m`"
-            mv ${HOME}/.emacs.d ${HOME}/${RENAME}
-            format "Rename .emacs.d to ${RENAME}" info
-    fi
-    ln -s ${DEMACS} ${HOME}/.emacs.d
-
-    # cask はインストールされているか
-    if ! type cask > /dev/null 2>&1; then
-        cd ${HOME}
-            # curlが存在しているかどうか
-            if type curl > /dev/null 2>&1; then
-            curl -fsSkL https://raw.github.com/cask/cask/master/go | python
-        else
-            wget --no-check-certificate https://raw.githubusercontent.com/cask/cask/master/go && python go
+        if [ -$? -ne 0 ]; then
+            format "Error: Cannot clone repository. Exit" fail
+            return 1
         fi
-            echo "export PATH=$HOME/.cask/bin:$PATH" > ~/.bashrc
-        source ~/.bashrc
-            format "Finished installing cask for Emacs" success
-            format "Please add bellow path at .bashrc or .zshrc" info
-            format "export PATH='~/.cask/bin:$PATH'" info
+    fi
+    return 0;
+}
+
+# [DEPLOY] make symlink
+function symlink() {
+    if [ -e ${DEMACS} ]; then
+        # 既存の.emacs.dは名前を変えてバックアップ
+        RNAME=".emacs.d_bk_`date +%Y%m`"
+        mv ${DEMACS} ${HOME}/${RENAME}
+        format "Rename .emacs.d to ${RNAME}" info
     fi
 
-    cd ${DEMACS}
-    format "Cask initialized. Please wait" info
-    (cask update && cask install && cask update && cask upgrade) > /dev/null 2>&1
-    format "Finished" success
-
-    git submodule init && git submodule update
+    ln -s ${INSTALL_PATH} ${DEMACS}
 
     # make symbolic link to .java_base.tag
     ln -s ${DEMACS}/.java_base.tag ${HOME}/.java_base.tag
 
-    echo "======================================================"
-    format "Finished installing dotemacs at your computer." success
-    echo "======================================================"
+    return 0
 }
 
-function install_dotfiles() {
-    initialize
-    cd ${TARGET_DIR}
-    fetch dotfiles
-
-    DFILES=${TARGET_DIR}/dotfiles
-
-    # dotfileの一覧
-    files=(".zshrc" ".zshenv" ".zlogout" ".vimrc" ".tmux" ".tmux.conf" ".gitconfig")
-
-    for ((i = 0; i < ${#files[@]}; i++)) {
-            if [ ! -e "${HOME}/${files[i]}" ]; then
-                format "Generate ${files[i]} link..." success
-                ln -s ${DFILES}/${files[i]} ${HOME}/${files[i]}
-            else
-                format "${files[i]} exist, so we backup old file and renew link"
-                mv ${HOME}/${files[i]} ${HOME}/${files[i]}_`date +%Y%m`
-                ln -s ${DFILES}/${files[i]} ${HOME}/${files[i]}
-            fi
-    }
-
-    format "Start installing oh-my-zsh..." info
-    cd ${HOME}
-    if type curl > /dev/null 2>&1; then
-        curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+# [DEPLOY] install cask
+function install_cask() {
+    CASK_URL="https://raw.github.com/cask/cask/master/go"
+    if [ type curl > /dev/null 2>&1 ]; then
+        curl -fsSkL ${CASK_URL} | python
     else
-        # curl がない場合はwgetを使う
-            wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh  && sh install.sh
+        wget --no-check-certificate ${CASK_URL} && python go
     fi
-    rm -f $HOME/.zshrc*  # oh-my-zshで自動生成されるので
-    ln -s ${DFILES}/.zshrc ${HOME}/.zshrc
-
-    format "Success installing oh-my-zsh" success
-
-    cd ${TARGET_DIR}
-    git clone git://github.com/zsh-users/zaw.git
-
-    format "Make .local.zsh for your local configuration" info
-    echo "# -*- mode: sh -*-" > ${HOME}/.local.zsh
-    echo "# This area is for local configuration which is depend on your environment." >> ${HOME}/.local.zsh
-    echo "======================================================"
-    format "Finished installing dotfiles at your computer." success
-    echo "======================================================"
+    format "Success to install cask" success
+    format "Please add to path to use cask command" info
+    format "export PATH=${HOME}/.cask/bin:${PATH}"
+    return 0
 }
 
-function install_powerline() {
+# [INIT] auto-complete-clang-async
+function install_acca() {
     OS=`uname`
-    case $OS in
-            "Darwin")
-                brew tap senemat/font
-                brew install --powerline --vim-powerline ricty
-                ;;
-            "Linux")
-                format "We don't support your Linux distribution" warn
-                ;;
-            *)
-                format "Fatal Error: We didn't recognize your using OS" fail
-    esac
+    if [ "OS" = "Linux" ]; then
+        # Ubuntuであると仮定する
+        format "install dependences" info
+        sudo apt-get install clang libclang-dev llvm-dev
+        cd ${DEMACS}/elisp/emacs/clang-complete-async
+        # make LLVM_CONFIG=llvm-config-3.4
+        make
+    elif [ "OS" = "Darwin" ]; then
+        # Mac OSX
+        brew install emacs-clang-complete-async
+        ln -s /usr/local/Cellar/emacs-clang-complete-async/clang-complete ~/.emacs.d/elisp/emacs-clang-complete-async/clang-complete
+    else
+        format "Not supported your OS" fail
+        return 1
+    fi
+    format "Success to install emacs-clang-complete-async" success
+    return 0
 }
 
-function your_status() {
-    OS=`uname`
-    case $OS in
-        "Darwin")
-            ;;
-        "Linux")
-            ;;
-        "FreeBSD")
-            ;;
-        "SunOS")
-            ;;
-        *)
-            echo "Unknown" warn;;
-    esac
+# Deploy
+function deploy() {
+    format "Starting installation for dotemacs" info
+    _branch=${1:"master"}
+    fetch ${_branch}
+    format "Make symlink" info
+    symlink
+    format "Cask install" info
+    install_cask
+    return 0
 }
 
-# 依存関係を調べる
-function dependences() {
-    exit 0
+# init
+function init() {
+    format "initialize" info
+    pip install -r ${DEMACS}/requirements.txt
+    format "installing cask" info
+    install_cask
+    export PATH="${HOME}/.cask/bin/cask:${PATH}"
+    cask install && cask update && cask upgrade
+    return 0
 }
 
-function main() {
-    echo "==============================================================================="
-    echo "Welcome to setup script for jtwp470"
-    echo "setup at dotemacs and dotconfig"
-    echo "Script version : ${VERSION}"
-    echo "Please choose number what you want to install."
-    echo "(1) ALL     (2) Only dotemacs     (3) Only dotfiles"
-    echo "(4) Exit Script"
-    echo "(5) [Optional] Install a Ricty & Powerline font (OSX User Only Support)"
-    echo "==============================================================================="
-    echo -n ">>> " # 改行しない
-    read ans
-
-    case $ans in
-            1)
-            format "We start to install the configuration for Emacs" info
-                install_dotemacs
-            format "Next, we will install dotfiles. Please wait a moment." info
-            sleep 5
-            format "Starting..." info
-            install_dotfiles
-            exit 0;;
-            2)
-                format "Start installing dotemacs..." info
-                install_dotemacs;;
-            3)
-                format "Start installing dotfiles..." info
-                install_dotfiles;;
-            4)
-                format "Exit script..." success
-                exit 0;;
-            5)
-                install_powerline;;
-            6)  emacs_clang;;
-            *)
-                main
-    esac
+# test
+function tests() {
+    cd ${DEMACS}/tests
+    format "Emacs byte-compile test"
+    bash test-inits-el-byc.sh
+    return 0
 }
-main
+OPT=$1
+
+case ${OPT} in
+    "help")
+        echo "help"
+        exit 0;;
+    "deploy")
+        deploy && exit 0;;
+    "init")
+        init && exit 0;;
+    "test")
+        tests && exit 0;;
+    "install-cask")
+        install_cask && exit 0;;
+    "install-acca")
+        install-acca && exit 0;;
+    "install-travis")
+        deploy "feature/travis"
+        init
+        install_acca
+        tests
+        exit 0;;
+    *)
+        echo "No options"
+        exit 0;;
+esac

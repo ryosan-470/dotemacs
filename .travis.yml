@@ -1,0 +1,16 @@
+language: emacs-lisp
+env:
+ - EMACS=emacs23
+ - EMACS=emacs24
+ - EMACS=emacs-snapshot
+matrix:
+  allow_failures:
+    - env: EMACS=emacs23
+before_install
+  # install emacs
+  - sudo add-apt-repository -y ppa:ubuntu-elisp
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq $EMACS
+  - sudo apt-get install python3 python3-pip
+script:
+  ./setup.sh install-travis
