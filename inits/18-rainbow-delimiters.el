@@ -18,5 +18,5 @@
      (cl-callf color-saturate-name (face-foreground face) 50))))
 (add-hook 'emacs-startup-hook 'rainbow-delimiters-using-stronger-colors)
 
-(global-set-key [f6] 'rainbow-delimiters-using-stronger-colors)
+(global-set-key [f3] 'rainbow-delimiters-using-stronger-colors)
 ;;; 18-rainbow-delimiters.el ends here

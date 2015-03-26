@@ -75,3 +75,4 @@
 (depends-on "python-mode")
 (depends-on "cython-mode")
 (depends-on "ac-ispell")
+(depends-on "smart-cursor-color") ;; カーソルの背景色を文字色に合わせて見やすくする
