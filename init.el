@@ -10,7 +10,7 @@
   (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
             (normal-top-level-add-subdirs-to-load-path)))
 
-(require 'init-loader)
+;; (require 'init-loader)
 (init-loader-load "~/.emacs.d/inits/")
 ;;; init.el ends here
 (custom-set-variables

@@ -22,12 +22,16 @@
 (global-set-key (kbd "C-x <up>")    'windmove-up)
 (global-set-key (kbd "C-x <right>") 'windmove-right)
 ;; カーソルのあるウィンドウを閉じる
+(global-set-key (kbd "M-0") 'delete-window)
 (global-set-key (kbd "C-x w c") 'delete-window)
 ;; 他のウィンドウをすべて閉じる
+(global-set-key (kbd "M-1") 'delete-other-windows)
 (global-set-key (kbd "C-x w o") 'delete-other-windows)
 ;; ウィンドウを上下に分割
+(global-set-key (kbd "M-3") 'split-window-vertically)
 (global-set-key (kbd "C-x w h") 'split-window-vertically)
 ;; ウィンドウを左右に分割
+(global-set-key (kbd "M-2") 'split-window-horizontally)
 (global-set-key (kbd "C-x w v") 'split-window-horizontally)
 ;; magit keybind
 (global-set-key (kbd "C-x g") 'magit-status)

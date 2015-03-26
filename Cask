@@ -74,3 +74,4 @@
 (depends-on "whitespace-cleanup-mode")
 (depends-on "python-mode")
 (depends-on "cython-mode")
+(depends-on "ac-ispell")

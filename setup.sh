@@ -165,9 +165,10 @@ function init() {
 
 # test
 function tests() {
-    cd ${DEMACS}/tests
-    format "Emacs byte-compile test"
-    bash test-inits-el-byc.sh
+    cd ${DEMACS}/inits/
+    format "Emacs byte-compile test" info
+    make || (format "Test failed" fail && exit 1)
+    format "Test finished" success
     return 0
 }
 OPT=$1
@@ -219,7 +220,6 @@ _EOT_
         install_acca
         exit 0;;
     *)
-      format "Option is necessary." info
-      format "view help. setup.sh help" info
+        bash ./setup.sh help
       exit 0;;
 esac

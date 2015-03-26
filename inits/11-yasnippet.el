@@ -2,9 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 ;; save directory which make snippets
-(eval-after-load 'yasnippet
-  '(progn
-     (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
      (yas-global-mode 1)
      ;; 単語展開キーバインド (ver8.0から明記しないと機能しない)
      ;; (setqだとtermなどで干渉問題ありでした)
@@ -37,5 +35,5 @@
           (custom-set-variables '(yas/prompt-functions '(my-yas/prompt)))))
 
      ;; snippet-mode for *.yasnippet files
-     (add-to-list 'auto-mode-alist '("\\.yasnippet$" . snippet-mode))))
+     (add-to-list 'auto-mode-alist '("\\.yasnippet$" . snippet-mode))
 ;;; 11-yasnippet.el ends here
