@@ -1,12 +1,10 @@
 OBlanguage: emacs-lisp
 env:
- - EMACS=emacs22
  - EMACS=emacs23
  - EMACS=emacs24
  - EMACS=emacs-snapshot
 matrix:
   allow_failures:
-    - env: EMACS=emacs22
     - env: EMACS=emacs23
 before_install:
   # install emacs
