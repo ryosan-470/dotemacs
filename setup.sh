@@ -173,9 +173,8 @@ function tests() {
 }
 
 function install-travis() {
-    branch=`git rev-parse --abbrev-ref @`
-    `emacs --version`
-    deploy ${branch}
+    format "\n`emacs --version`" info
+    deploy "dev"
     init
     install_acca
     tests
