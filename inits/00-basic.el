@@ -4,7 +4,7 @@
 ;; load-path
 (setq load-path (cons "~/.emacs.d/elisp" load-path))
 ;;; 背景を透過に設定
-(set-frame-parameter nil 'alpha 70)
+;; (set-frame-parameter nil 'alpha 70)
 ;; Emacs Theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 ;; (load-theme 'manoj-dark t)
@@ -36,8 +36,6 @@
 ;;(setq uniquify-buffer-name-style 'post-forward-angle-branckets)
 ;; zshを使う
 (setq shell-file-name "/bin/zsh")
-;; 背景透過
-(set-frame-parameter nil 'alpha 80 )
 ;; 起動メッセージの省略
 (setq inhibit-startup-message t)
 ;; リージョンをハイライト
@@ -55,4 +53,46 @@
 (setq-default indent-tabs-mode nil) ;; スペースを使う
 ;; 自動インデント
 (define-key global-map (kbd "RET") 'newline-and-indent)
+;; 余分な空白をハイライト
+(setq-default show-trailing-whitespace t)
+;; 以下に上げられているモードでは無効化する
+(defun my/disable-trailing-mode-hook ()
+  "Disable show tail whitespace."
+  (setq show-trailing-whitespace nil))
+
+(defvar my/disable-trailing-modes
+  '(comint-mode
+    eshell-mode
+    eww-mode
+    term-mode
+    ansi-term
+    twittering-mode))
+
+(mapc
+ (lambda (mode)
+   (add-hook (intern (concat (symbol-name mode) "-hook"))
+             'my/disable-trailing-mode-hook))
+ my/disable-trailing-modes)
+;; *.zsh ファイルはsh-modeで開く
+(add-to-list 'auto-mode-alist '("\\.zsh\\'" . sh-mode))
+;; whitespace-cleanup-mode
+(global-whitespace-cleanup-mode t)
+;; byte-compile時のwarningを抑制する
+;; http://www.gfd-dennou.org/member/uwabami/cc-env/EmacsBasic.html
+;; Compile-Log の非表示
+(let ((win (get-buffer-window "*Compile-Log*")))
+  (when win (delete-window win)))
+;; Warning の抑制
+(setq byte-compile-warnings
+      '(not
+        free-vars
+        unresolved
+        callargs
+        redefine
+        ;; obsolete
+        noruntime
+        cl-functions
+        interactive-only
+        ;; make-local
+        ))
 ;;; 00-basic.el ends here

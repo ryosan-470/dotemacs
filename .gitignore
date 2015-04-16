@@ -8,3 +8,6 @@ undohist/
 .cask
 clang-complete
 url/
+# multiple-cursors
+.mc-lists.el
+semanticdb/

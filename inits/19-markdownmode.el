@@ -1,10 +1,10 @@
 ;;; 19-markdownmode.el --- Emacs Markdown Mode
 ;;; Commentary:
 ;;; Code:
-(use-package markdown-mode
-  :mode (("\\.text\\'" . markdown-mode)
-         ("\\.md\\'" . markdown-mode)
-         ("\\.markdown\\'" . markdown-mode)
-         ;; open markdown file to set github flavored markdown
-         ("README\\.md\\'" . gfm-mode)))
+(autoload 'markdown-mode "markdown-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.text\\'"      . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'"  . markdown-mode))
+;;; Open markdown file to set Github flavored markdown
+(add-to-list 'auto-mode-alist '("\\.md\\'"        . gfm-mode))
+(add-to-list 'auto-mode-alist '("README\\.md\\'"  . gfm-mode))
 ;;; 19-markdownmode.el ends here
