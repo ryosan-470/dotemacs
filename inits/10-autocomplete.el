@@ -19,7 +19,7 @@
 (add-to-list 'load-path "~/.emacs.d/elisp/emacs-clang-complete-async")
 (require 'auto-complete-clang-async nil t)
 (defun ac-cc-mode-setup ()
-  (setq ac-clang-complete-executable "~/.emacs.d/elisp/emacs-clang-complete-async/clang-complete")
+  (setq ac-clang-complete-executable "~/.emacs.d/clang-complete")
   (setq ac-sources '(ac-source-clang-async))
   (ac-clang-launch-completion-process))
 (defun my-ac-config ()

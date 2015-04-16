@@ -118,7 +118,7 @@ function install_cask() {
 }
 
 # [INIT] auto-complete-clang-async
-function install_acca() {
+function install-acca() {
     OS=`uname`
     if [ ${OS} = "Linux" ]; then
         # Ubuntuであると仮定する
@@ -171,6 +171,15 @@ function tests() {
     format "Test finished" success
     return 0
 }
+
+function install-travis() {
+    branch=`git rev-parse --abbrev-ref @`
+    `emacs --version`
+    deploy ${branch}
+    init
+    install_acca
+    tests
+}
 OPT=$1
 
 case ${OPT} in
@@ -185,11 +194,7 @@ case ${OPT} in
     "install-acca")
         install-acca && exit 0;;
     "install-travis")
-        deploy "dev"
-        init
-        install_acca
-        tests
-        exit 0;;
+        install-travis && exit 0;;
     "help")
         cat <<_EOT_
 setup.sh [options]

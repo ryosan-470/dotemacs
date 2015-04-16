@@ -5,7 +5,7 @@
   '(progn
      (ac-ispell-setup)))
 
-(add-hook 'git-commit-mode-hook 'ac-ispell-ac-setup)
-(add-hook 'prog-mode-hook 'ac-ispell-setup)
-(add-hook 'markdown-mode 'ac-ispell-setup)
+;;(add-hook 'git-commit-mode-hook 'ac-ispell-ac-setup)
+;;(add-hook 'prog-mode-hook 'ac-ispell-setup)
+;;(add-hook 'markdown-mode 'ac-ispell-setup)
 ;;; 36-ac-ispell.el ends here
