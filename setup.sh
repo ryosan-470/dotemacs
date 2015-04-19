@@ -123,10 +123,10 @@ function install-acca() {
     if [ ${OS} = "Linux" ]; then
         # Ubuntuであると仮定する
         format "install dependences" info
-        sudo apt-get install clang libclang-dev llvm-dev
+        sudo apt-get install clang-3.5 libclang-3.5-dev llvm-3.5-dev || (format "Failed to install dependences using apt" fail && exit 1)
         cd ${DEMACS}/elisp/emacs-clang-complete-async
-        # make LLVM_CONFIG=llvm-config-3.4
-        make
+        make LLVM_CONFIG=llvm-config-3.5
+        ln -s ./clang-complete ~/.emacs.d/clang-complete
     elif [ ${OS} = "Darwin" ]; then
         # Mac OSX
         brew install emacs-clang-complete-async
@@ -173,9 +173,10 @@ function tests() {
 }
 
 function install-travis() {
-    format "\n`emacs --version`" info
+    format "Emacs version:\n`emacs --version`" info
     deploy "dev"
     init
+    format "Starting to build emacs-clang-complete-async" info
     install_acca
     tests
 }
