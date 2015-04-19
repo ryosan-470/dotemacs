@@ -8,10 +8,11 @@
 ##
 ###################################################################
 TARGET_DIR="${HOME}/.dotconfig"       # 保存先
-VERSION="1.00"
+VERSION="1.20"
 
 DEMACS="${HOME}/.emacs.d"
 INSTALL_PATH="${HOME}/.dotconfig/dotemacs"
+OS=`uname`  # Distribution type (support Linux (Ubuntu) & Darwin)
 # echo色付け Usage echowcl text [COLOR] [TYPE]
 function echowcl() {
     TEXT="${1}"
@@ -119,7 +120,6 @@ function install_cask() {
 
 # [INIT] auto-complete-clang-async
 function install-acca() {
-    OS=`uname`
     if [ ${OS} = "Linux" ]; then
         # Ubuntuであると仮定する
         format "install dependences" info
@@ -130,7 +130,7 @@ function install-acca() {
     elif [ ${OS} = "Darwin" ]; then
         # Mac OSX
         brew install emacs-clang-complete-async
-        ln -s `brew --prefix`/Cellar/emacs-clang-complete-async/clang-complete ~/.emacs.d/elisp/emacs-clang-complete-async/clang-complete
+        ln -s `brew --prefix`/Cellar/emacs-clang-complete-async/clang-complete ~/.emacs.d/clang-complete
     else
         format "Not supported your OS" fail
         return 1
@@ -154,7 +154,13 @@ function deploy() {
 # init
 function init() {
     format "initialize" info
-    pip install -r ${DEMACS}/requirements.txt
+    PIP_CMD="pip install -r ${DEMACS}/requirements.txt"
+    format "${PIP_CMD}" info
+    if [ ${OS} = "Linux" ]; then
+        sudo ${PIP_CMD}
+    else
+        ${PIP_CMD}
+    fi
     export PATH="${HOME}/.cask/bin/cask:${PATH}"
     format "Cask updateing..." info
     cd ${DEMACS}
@@ -177,7 +183,7 @@ function install-travis() {
     deploy "dev"
     init
     format "Starting to build emacs-clang-complete-async" info
-    install_acca
+    install-acca
     tests
 }
 OPT=$1
@@ -222,9 +228,9 @@ _EOT_
         format "Initialize" info
         init   || (format "[FAILED] initialize..." fail && exit 1)
         format "Starting installation to emacs-clang-complete-async" info
-        install_acca
+        install-acca
         exit 0;;
     *)
         bash ./setup.sh help
-      exit 0;;
+        exit 0;;
 esac
