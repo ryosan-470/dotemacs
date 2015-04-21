@@ -30,8 +30,6 @@
 (my-ac-config)
 
 ;; Auto Complete for Java (use-packageではうまく動いてくれない)
-(add-to-list 'load-path "~/.emacs.d/elisp/auto-java-complete/")
-(require 'ajc-java-complete-config)
 (add-hook 'java-mode-hook 'ajc-java-complete-mode)
-;; (add-hook 'find-file-hook 'ajc-4-jsp-find-file-hook)
+(add-hook 'find-file-hook 'ajc-4-jsp-find-file-hook)
 ;;; 10-autocomplete.el ends here
