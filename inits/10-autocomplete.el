@@ -31,5 +31,4 @@
 
 ;; Auto Complete for Java (use-packageではうまく動いてくれない)
 (add-hook 'java-mode-hook 'ajc-java-complete-mode)
-(add-hook 'find-file-hook 'ajc-4-jsp-find-file-hook)
 ;;; 10-autocomplete.el ends here
