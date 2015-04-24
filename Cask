@@ -74,4 +74,5 @@
 (depends-on "whitespace-cleanup-mode")
 (depends-on "python-mode")
 (depends-on "cython-mode")
-(depends-on "ac-ispell")
+(depends-on "coffee-mode")  ;; CoffeeScript Majar Mode (>= 24.1)
+(depends-on "tangotango-theme") ;; tango-theme
