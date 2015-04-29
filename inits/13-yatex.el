@@ -1,7 +1,6 @@
 ;;; 13-yatex.el -- YaTeX for Emacs LaTeX Mode
 ;;; Commentary:
 ;;; Code:
-(add-to-list 'load-path "~/.emacs.d/elisp/yatex")
 (autoload 'yatex-mode "YaTeX mode" nil t)
 (setq auto-mode-alist
       (append '(("\\.tex$" . yatex-mode)

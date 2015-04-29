@@ -16,7 +16,7 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 
 ;; Auto Complete for C/C++
-(add-to-list 'load-path "~/.emacs.d/elisp/emacs-clang-complete-async")
+;;(add-to-list 'load-path "~/.emacs.d/elisp/emacs-clang-complete-async")
 (require 'auto-complete-clang-async nil t)
 (defun ac-cc-mode-setup ()
   (setq ac-clang-complete-executable "~/.emacs.d/clang-complete")
@@ -28,7 +28,4 @@
   (add-hook 'auto-complete-mode-hook 'ac-common-setup)
   (global-auto-complete-mode t))
 (my-ac-config)
-
-;; Auto Complete for Java (use-packageではうまく動いてくれない)
-(add-hook 'java-mode-hook 'ajc-java-complete-mode)
 ;;; 10-autocomplete.el ends here

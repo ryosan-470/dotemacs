@@ -2,8 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 ;; Add library path
-;; (require 'yatex)
-(add-to-list 'load-path "~/.emacs.d/elisp/yatex")
+(require 'yatex)
 ;; YaTeX mode
 (setq auto-mode-alist
     (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))

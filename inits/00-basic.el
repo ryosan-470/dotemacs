@@ -1,10 +1,6 @@
 ;;; 00-basic.el --- 基本設定
 ;;; Commentary:
 ;;; Code:
-;; load-path
-(setq load-path (cons "~/.emacs.d/elisp" load-path))
-;;; 背景を透過に設定
-;; (set-frame-parameter nil 'alpha 70)
 ;; Emacs Theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 ;; (load-theme 'manoj-dark t)
