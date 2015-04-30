@@ -72,7 +72,6 @@
 (depends-on "emmet-mode")
 (depends-on "latex-math-preview")
 (depends-on "whitespace-cleanup-mode")
-(depends-on "python-mode")
 (depends-on "cython-mode")
 (depends-on "coffee-mode")  ;; CoffeeScript Majar Mode (>= 24.1)
 (depends-on "tangotango-theme") ;; tango-theme

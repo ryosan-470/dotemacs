@@ -2,12 +2,12 @@
 ;;; Commentary:
 ;;; Code:
 ;;; For Python
-(autoload 'python-mode "python-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.py$"  . python-mode))
+;; (autoload 'python-mode "python-mode" nil t)
+;; (add-to-list 'auto-mode-alist '("\\.py$"  . python-mode))
 
-;; indent
+;; ;; indent
 (add-hook 'python-mode-hook
-          '(lambda ()
+           '(lambda ()
 ;;             (setq indent-tabs-mode nil)
 ;;             (setq indent-level 2)
 ;;             (setq python-indent 4)
