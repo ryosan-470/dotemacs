@@ -75,3 +75,4 @@
 (depends-on "cython-mode")
 (depends-on "coffee-mode")  ;; CoffeeScript Majar Mode (>= 24.1)
 (depends-on "tangotango-theme") ;; tango-theme
+(depends-on "ein") ;; Emacs IPython notebook

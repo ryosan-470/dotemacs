@@ -28,10 +28,10 @@
 (global-set-key (kbd "M-1") 'delete-other-windows)
 (global-set-key (kbd "C-x w o") 'delete-other-windows)
 ;; ウィンドウを上下に分割
-(global-set-key (kbd "M-3") 'split-window-vertically)
+(global-set-key (kbd "M-2") 'split-window-vertically)
 (global-set-key (kbd "C-x w h") 'split-window-vertically)
 ;; ウィンドウを左右に分割
-(global-set-key (kbd "M-2") 'split-window-horizontally)
+(global-set-key (kbd "M-3") 'split-window-horizontally)
 (global-set-key (kbd "C-x w v") 'split-window-horizontally)
 ;; magit keybind
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -52,10 +52,10 @@
 (global-set-key (kbd "M-x")   'helm-M-x)
 
 ;; FlyCheck
-(global-set-key (kbd "C-c p") 'flycheck-previous-error)
-(global-set-key (kbd "C-c n") 'flycheck-next-error)
-(global-set-key (kbd "C-c l") 'flycheck-list-errors)
-(global-set-key (kbd "C-c f") 'flycheck-first-error)
+(global-set-key (kbd "C-c f p") 'flycheck-previous-error)
+(global-set-key (kbd "C-c f n") 'flycheck-next-error)
+(global-set-key (kbd "C-c f l") 'flycheck-list-errors)
+(global-set-key (kbd "C-c f f") 'flycheck-first-error)
 
 ;; quickrun
 (global-set-key (kbd "C-c c") 'quickrun)
@@ -67,13 +67,15 @@
 ;; visual-regexp
 (global-set-key (kbd "C-c r") 'vr/replace)
 (global-set-key (kbd "C-c q") 'vr/query-replace)
-(global-set-key (kbd "C-c m") 'vr/mc-mark)
+;; (global-set-key (kbd "C-c m") 'vr/mc-mark)
 
 ;; multiple-cursors
-(global-set-key (kbd "C-c C-n") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c C-p") 'mc/mark-previous-lines)
-(global-set-key (kbd "C-c C-a") 'mc/mark-all-like-this)
-(global-set-key (kbd "C-c C-e") 'mc/edit-lines)
+(global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c m p") 'mc/mark-previous-lines)
+(global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c m e") 'mc/edit-lines)
+(global-set-key (kbd "C-c m s") 'mc/skip-to-next-like-this)
+(global-set-key (kbd "C-c m S") 'mc/skip-to-previous-like-this)
 
 ;; ace-jump-mode
 (global-set-key (kbd "C-c SPC")              'ace-jump-mode)
