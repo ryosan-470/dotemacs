@@ -9,7 +9,6 @@
 (global-auto-complete-mode t)  ;; すべてのモードで補完を有効にする
 (define-key ac-menu-map (kbd "C-c C-n") 'ac-next)
 (define-key ac-menu-map (kbd "C-c C-p") 'ac-previous)
-(ac-config-default)
 (setq ac-use-menu-map t)
 ;; 大文字と小文字を区別
 (custom-set-variables '(ac-ignore-case nil))

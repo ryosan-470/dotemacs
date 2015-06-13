@@ -24,6 +24,11 @@
 (setq read-file-name-completion-ignore-case t)
 ;; 行番号設定
 (global-linum-mode t)
+;; Emacsが思い原因を解消できる?
+;; http://qiita.com/takc923/items/acebbdae04994de16c6d
+(setq linum-delay t)
+(defadvice linum-schedule (around my-linum-schedule () activate)
+  (run-with-idle-timer 0.2 nil #'linum-update-current))
 ;; F6で行番号を表示
 (global-set-key [f6] 'linum-mode)
 (setq linum-format "%3d ")

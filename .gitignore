@@ -11,3 +11,4 @@ url/
 # multiple-cursors
 .mc-lists.el
 semanticdb/
+test*
