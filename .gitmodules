@@ -7,9 +7,6 @@
 [submodule "snippets/java-mode"]
 	path = snippets/java-mode
 	url = https://github.com/nekop/yasnippet-java-mode.git
-[submodule "elisp/yatex"]
-	path = elisp/yatex
-	url = https://github.com/emacsmirror/yatex.git
 [submodule "elisp/emacs-clang-complete-async"]
 	path = elisp/emacs-clang-complete-async
 	url = https://github.com/Golevka/emacs-clang-complete-async.git

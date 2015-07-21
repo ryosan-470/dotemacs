@@ -26,8 +26,6 @@
 (depends-on "flycheck")
 (depends-on "flycheck-cask")
 (depends-on "flycheck-pos-tip")
-(depends-on "git-commit-mode")
-(depends-on "git-rebase-mode")
 (depends-on "gitconfig-mode")
 (depends-on "gitignore-mode")
 (depends-on "google-translate")
@@ -63,17 +61,19 @@
 (depends-on "undohist")
 (depends-on "use-package")
 (depends-on "visual-regexp")
-(depends-on "web-mode")
 (depends-on "yasnippet")
+(depends-on "yatex")
+(depends-on "js2-mode")
+(depends-on "ac-js2")
 
-(depends-on "tuareg") ;; Emacs OCaml Mode
-(depends-on "multi-term") ;; multi-term is better than ansi-term
+(depends-on "multi-term")                  ;; multi-term is better than ansi-term
 (depends-on "rainbow-delimiters")
 (depends-on "emmet-mode")
 (depends-on "latex-math-preview")
 (depends-on "whitespace-cleanup-mode")
 (depends-on "cython-mode")
-(depends-on "coffee-mode")  ;; CoffeeScript Majar Mode (>= 24.1)
-(depends-on "tangotango-theme") ;; tango-theme
-(depends-on "ein") ;; Emacs IPython notebook
-(depends-on "merlin")
+(depends-on "coffee-mode")                 ;; CoffeeScript Majar Mode (>= 24.1)
+(depends-on "tangotango-theme")            ;; tango-theme
+(depends-on "ein")                         ;; Emacs IPython notebook
+(depends-on "tuareg")                      ;; Emacs OCaml Mode
+(depends-on "merlin")                      ;; For OCaml
