@@ -2,78 +2,50 @@
 (source melpa)
 (source marmalade)
 
-(depends-on "init-loader")
-(depends-on "pallet")
+
+
 (depends-on "ace-jump-mode")
 (depends-on "anzu")
-(depends-on "auto-complete")
-(depends-on "auto-complete-clang")
+
 (depends-on "bind-key")
-(depends-on "cask")
+
 (depends-on "color-theme")
 (depends-on "color-theme-sanityinc-tomorrow")
 (depends-on "concurrent")
 (depends-on "ctable")
-(depends-on "dash")
 (depends-on "deferred")
-(depends-on "diminish")
-(depends-on "drag-stuff")
-(depends-on "epc")
+
 (depends-on "epl")
-(depends-on "exec-path-from-shell")
+
 (depends-on "expand-region")
 (depends-on "f")
-(depends-on "flycheck")
-(depends-on "flycheck-cask")
-(depends-on "flycheck-pos-tip")
-(depends-on "gitconfig-mode")
-(depends-on "gitignore-mode")
 (depends-on "google-translate")
-(depends-on "helm")
-(depends-on "helm-ag")
-(depends-on "helm-descbinds")
-(depends-on "helm-gtags")
 (depends-on "htmlize")
 (depends-on "idle-highlight-mode")
-(depends-on "jedi")
-(depends-on "magit")
-(depends-on "markdown-mode")
-(depends-on "matlab-mode")
+
+
+
 (depends-on "molokai-theme")
 (depends-on "multiple-cursors")
-(depends-on "nyan-mode")
 (depends-on "package-build")
 (depends-on "pkg-info")
-(depends-on "popup")
-(depends-on "popwin")
-(depends-on "powerline")
-(depends-on "prodigy")
-(depends-on "projectile")
-(depends-on "python-environment")
+
 (depends-on "quickrun")
 (depends-on "recentf-ext")
 (depends-on "s")
 (depends-on "shut-up")
 (depends-on "smartparens")
-(depends-on "smex")
-(depends-on "twittering-mode")
 (depends-on "undo-tree")
 (depends-on "undohist")
-(depends-on "use-package")
 (depends-on "visual-regexp")
 (depends-on "yasnippet")
 (depends-on "yatex")
-(depends-on "js2-mode")
-(depends-on "ac-js2")
+
 
 (depends-on "multi-term")                  ;; multi-term is better than ansi-term
 (depends-on "rainbow-delimiters")
-(depends-on "emmet-mode")
 (depends-on "latex-math-preview")
 (depends-on "whitespace-cleanup-mode")
-(depends-on "cython-mode")
-(depends-on "coffee-mode")                 ;; CoffeeScript Majar Mode (>= 24.1)
+
 (depends-on "tangotango-theme")            ;; tango-theme
 (depends-on "ein")                         ;; Emacs IPython notebook
-(depends-on "tuareg")                      ;; Emacs OCaml Mode
-(depends-on "merlin")                      ;; For OCaml
