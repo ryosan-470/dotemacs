@@ -138,13 +138,7 @@ function deploy() {
 # init
 function init() {
     format "initialize" info
-    PIP_CMD="pip install -r ${DEMACS}/requirements.txt"
-    format "${PIP_CMD}" info
-    if [ ${OS} = "Linux" ]; then
-        sudo ${PIP_CMD}
-    else
-        ${PIP_CMD}
-    fi
+    format "None" success
     return 0
 }
 
@@ -161,8 +155,8 @@ function install-travis() {
     format "Emacs version:\n`emacs --version`" info
     deploy "dev"
     init
-    format "Starting to build emacs-clang-complete-async" info
-    install-acca
+    # format "Starting to build emacs-clang-complete-async" info
+    # install-acca
     tests
 }
 OPT=$1
