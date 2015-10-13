@@ -51,7 +51,7 @@
 (el-get-bundle jedi)
 (el-get-bundle yatex)
 (el-get-bundle scala-mode2)
-(el-get-bundle ensime)
+(el-get-bundle web-mode)
 ;; Utility
 (el-get-bundle ace-jump-mode)
 (el-get-bundle anzu)
