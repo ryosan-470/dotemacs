@@ -6,7 +6,7 @@ network-security.data
 tramp
 undohist/
 elpa/
-.python-environments     # Jedi
+.python-environments/    # Jedi
 .mc-lists.el             # multiple-cursors
 url/
 
