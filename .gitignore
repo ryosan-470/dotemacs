@@ -1,16 +1,27 @@
+# Application generated
 ac-comphist.dat
 auto-save-list/
-elpa/
+recentf
+network-security.data
 tramp
 undohist/
+elpa/
+.python-environments     # Jedi
+.mc-lists.el             # multiple-cursors
+url/
+
+# Emacs bytecompiled file
 *.elc
-.python-environments
+
 .cask
 clang-complete
-url/
-# multiple-cursors
-.mc-lists.el
+
 semanticdb/
 test*
 
 el-get/
+
+# OSX
+._*
+.DS_Store
+\#*

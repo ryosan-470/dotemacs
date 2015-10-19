@@ -21,7 +21,7 @@
     (eval-print-last-sexp)))
 
 ;; el-get用のパッケージ定義ファイルの置き場
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-recipes")
+;; (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-recipes")
 ;; el-get packages
 
 (el-get-bundle init-loader)
@@ -49,7 +49,7 @@
 (el-get-bundle cython-mode)
 (el-get-bundle epc)
 (el-get-bundle jedi)
-(el-get-bundle yatex)
+(el-get-bundle elpa:yatex)
 (el-get-bundle scala-mode2)
 (el-get-bundle web-mode)
 ;; Utility
