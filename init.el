@@ -52,6 +52,9 @@
 (el-get-bundle elpa:yatex)
 (el-get-bundle scala-mode2)
 (el-get-bundle web-mode)
+(el-get-bundle smarty-mode)  ;; PHP Templete Engine
+(el-get-bundle php-mode)
+(el-get-bundle php-completion) ;; For PHP
 ;; Utility
 (el-get-bundle ace-jump-mode)
 (el-get-bundle anzu)

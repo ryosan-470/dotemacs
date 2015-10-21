@@ -9,6 +9,7 @@ elpa/
 .python-environments/    # Jedi
 .mc-lists.el             # multiple-cursors
 url/
+abbrev_defs
 
 # Emacs bytecompiled file
 *.elc
@@ -18,7 +19,6 @@ clang-complete
 
 semanticdb/
 test*
-
 el-get/
 
 # OSX
