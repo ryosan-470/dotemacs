@@ -96,4 +96,10 @@
         interactive-only
         ;; make-local
         ))
+;; tabbar
+(tabbar-mode 1)
+;; Disable mouse wheel
+(tabbar-mwheel-mode -1)
+;; not grouping
+(setq tabbar-buffer-groups-function nil)
 ;;; 00-basic.el ends here

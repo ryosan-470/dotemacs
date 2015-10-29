@@ -13,9 +13,9 @@
 (global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
 ;; ここらへんは 28-virtrual-regexp.el を使っている
 ;; 置換 (対話型) query-replace
-;; (global-set-key (kbd "C-c q") 'query-replace)
+(global-set-key (kbd "C-c q") 'query-replace)
 ;; 置換 (非対話) replace-string
-;; (global-set-key (kbd "C-c r") 'replace-string)
+(global-set-key (kbd "C-c r") 'replace-string)
 ;; Window Move
 (global-set-key (kbd "C-x <left>")  'windmove-left)
 (global-set-key (kbd "C-x <down>")  'windmove-down)
@@ -35,8 +35,8 @@
 (global-set-key (kbd "C-x w v") 'split-window-horizontally)
 ;; magit keybind
 (global-set-key (kbd "C-x g") 'magit-status)
-;; C-c t シェルを開く
-(global-set-key (kbd "C-x t") 'shell-mode)
+;; ;; C-c t シェルを開く
+;; (global-set-key (kbd "C-x t") 'shell-mode)
 ;; C-x c f で byte-compile-file
 (global-set-key (kbd "C-c C-b") 'byte-compile-file)
 ;; (global-set-key (kbd "C-x <down>") 'scroll-up)
@@ -87,4 +87,10 @@
 
 ;; cua-mode
 (global-set-key (kbd "C-x SPC") 'cua-set-rectangle-mark)
+
+;; tabbar
+(global-set-key (kbd "C-x t r")   'tabbar-forward-tab)
+(global-set-key (kbd "M-<right>") 'tabbar-forward-tab)
+(global-set-key (kbd "C-x t l")   'tabbar-backward-tab)
+(global-set-key (kbd "M-<left>")  'tabbar-backward-tab)
 ;;; 99-keybind.el ends here

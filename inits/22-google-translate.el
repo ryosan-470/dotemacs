@@ -3,9 +3,9 @@
 ;;; Code:
 ;; keybind
 ;; C-x C-t で選択項目を翻訳
-(global-set-key (kbd "C-x C-t") 'google-translate-at-point)
+;;(global-set-key (kbd "C-x C-t") 'google-translate-at-point)
 ;; C-x t で翻訳したい
-(global-set-key (kbd "C-x t") 'google-translate-query-translate)
+;; (global-set-key (kbd "C-x t") 'google-translate-query-translate)
 ;; 翻訳のデフォルト en --> ja
 (custom-set-variables
   '(google-translate-default-source-language "en")

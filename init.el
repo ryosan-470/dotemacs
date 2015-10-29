@@ -55,6 +55,7 @@
 (el-get-bundle smarty-mode)  ;; PHP Templete Engine
 (el-get-bundle php-mode)
 (el-get-bundle php-completion) ;; For PHP
+
 ;; Utility
 (el-get-bundle ace-jump-mode)
 (el-get-bundle anzu)
@@ -72,6 +73,7 @@
 (el-get-bundle rainbow-delimiters)
 (el-get-bundle recentf-ext)
 (el-get-bundle smartparens)
+(el-get-bundle tabbar)
 (el-get-bundle undo-tree)
 (el-get-bundle undohist)
 (el-get-bundle visual-regexp)
