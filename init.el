@@ -35,7 +35,7 @@
 (el-get-bundle flycheck/flycheck :depends (dash pkg-info let-alist cl-lib))
 (el-get-bundle elpa:flycheck-pos-tip)
 ;; Programming
-(el-get-bundle auto-complete)
+(el-get-bundle auto-complete :depends (seq popup))
 (el-get-bundle auto-complete-clang)
 ;; OCaml
 (el-get-bundle ocaml/tuareg)
@@ -54,8 +54,13 @@
 (el-get-bundle web-mode)
 (el-get-bundle smarty-mode)  ;; PHP Templete Engine
 (el-get-bundle php-mode)
-(el-get-bundle php-completion) ;; For PHP
-
+(el-get-bundle php-completion
+  :type github :pkgname "suzuki/php-completion"
+  :branch "develop")         ;; For PHP
+;; golang
+(el-get-bundle go-mode)
+(el-get-bundle go-autocomplete)
+(el-get-bundle go-eldoc)
 ;; Utility
 (el-get-bundle ace-jump-mode)
 (el-get-bundle anzu)
