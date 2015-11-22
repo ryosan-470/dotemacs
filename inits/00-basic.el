@@ -102,4 +102,35 @@
 (tabbar-mwheel-mode -1)
 ;; not grouping
 (setq tabbar-buffer-groups-function nil)
+;; http://ser1zw.hatenablog.com/entry/2012/12/31/022359
+(defun my-tabbar-buffer-list ()
+  (delq nil
+        (mapcar #'(lambda (b)
+                    (cond
+                     ;; Always include the current buffer.
+                     ((eq (current-buffer) b) b)
+                     ((buffer-file-name b) b)
+                     ((char-equal ?\  (aref (buffer-name b) 0)) nil)
+                     ((equal "*scratch*" (buffer-name b)) b) ; *scratch*バッファは表示する
+                     ((char-equal ?* (aref (buffer-name b) 0)) nil) ; それ以外の * で始まるバッファは表示しない
+                     ((buffer-live-p b) b)))
+                (buffer-list))))
+(setq tabbar-buffer-list-function 'my-tabbar-buffer-list)
+;; 色設定 http://hico-horiuchi.hateblo.jp/entry/20121208/1354975316
+(set-face-attribute ; バー自体の色
+ 'tabbar-default nil
+ :background "white"
+ :family "Inconsolata"
+ :height 1.0)
+(set-face-attribute ; アクティブなタブ
+ 'tabbar-selected nil
+ :background "black"
+ :foreground "white"
+ :weight 'bold
+ :box nil)
+(set-face-attribute ; 非アクティブなタブ
+ 'tabbar-unselected nil
+ :background "white"
+ :foreground "black"
+    :box nil)
 ;;; 00-basic.el ends here

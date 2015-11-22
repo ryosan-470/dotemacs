@@ -17,5 +17,3 @@
              (local-set-key (kbd "M-l") 'helm-gtags-select)
              ;; ジャンプする前の場所へ戻る
              (local-set-key (kbd "C-x t") 'helm-gtags-pop-stack)))
-
-(add-hook 'php-mode-hook 'helm-gtags-mode)

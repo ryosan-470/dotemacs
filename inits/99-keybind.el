@@ -50,7 +50,7 @@
 (global-set-key (kbd "C-h k") 'helm-descbinds)
 (global-set-key (kbd "C-h s") 'helm-ag)
 (global-set-key (kbd "M-x")   'helm-M-x)
-
+(global-set-key (kbd "C-h C-z") 'helm-buffer-run-kill-persistent)
 ;; FlyCheck
 (global-set-key (kbd "C-c f p") 'flycheck-previous-error)
 (global-set-key (kbd "C-c f n") 'flycheck-next-error)
@@ -92,5 +92,5 @@
 (global-set-key (kbd "C-x t r")   'tabbar-forward-tab)
 (global-set-key (kbd "M-<right>") 'tabbar-forward-tab)
 (global-set-key (kbd "C-x t l")   'tabbar-backward-tab)
-(global-set-key (kbd "M-<left>")  'tabbar-backward-tab)
+(global-set-key (kbd "M-<left>") 'tabbar-backward-tab)
 ;;; 99-keybind.el ends here
