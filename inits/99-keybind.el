@@ -13,9 +13,9 @@
 (global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
 ;; ここらへんは 28-virtrual-regexp.el を使っている
 ;; 置換 (対話型) query-replace
-;; (global-set-key (kbd "C-c q") 'query-replace)
+(global-set-key (kbd "C-c q") 'query-replace)
 ;; 置換 (非対話) replace-string
-;; (global-set-key (kbd "C-c r") 'replace-string)
+(global-set-key (kbd "C-c r") 'replace-string)
 ;; Window Move
 (global-set-key (kbd "C-x <left>")  'windmove-left)
 (global-set-key (kbd "C-x <down>")  'windmove-down)
@@ -35,22 +35,24 @@
 (global-set-key (kbd "C-x w v") 'split-window-horizontally)
 ;; magit keybind
 (global-set-key (kbd "C-x g") 'magit-status)
-;; C-c t シェルを開く
-(global-set-key (kbd "C-x t") 'shell-mode)
+;; ;; C-c t シェルを開く
+;; (global-set-key (kbd "C-x t") 'shell-mode)
 ;; C-x c f で byte-compile-file
 (global-set-key (kbd "C-c C-b") 'byte-compile-file)
 ;; (global-set-key (kbd "C-x <down>") 'scroll-up)
 ;; (global-set-key (kbd "C-x <up>")   'scroll-down)
-;; Emacs Helm Helm Prefix key is C-h
+;; Emacs Helm Prefix key is C-h
 (global-set-key (kbd "C-h m") 'helm-mini)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "M-y")   'helm-show-kill-ring)
 (global-set-key (kbd "C-h i") 'helm-imenu)
 (global-set-key (kbd "C-h b") 'helm-buffer-list)
 (global-set-key (kbd "C-h k") 'helm-descbinds)
-(global-set-key (kbd "C-h s") 'helm-ag)
 (global-set-key (kbd "M-x")   'helm-M-x)
-
+(global-set-key (kbd "C-h C-z") 'helm-buffer-run-kill-persistent)
+;; Helm Ag
+(global-set-key (kbd "C-h s") 'helm-ag)
+(global-set-key (kbd "C-h p") 'helm-ag-pop-stack)
 ;; FlyCheck
 (global-set-key (kbd "C-c f p") 'flycheck-previous-error)
 (global-set-key (kbd "C-c f n") 'flycheck-next-error)
@@ -70,12 +72,15 @@
 ;; (global-set-key (kbd "C-c m") 'vr/mc-mark)
 
 ;; multiple-cursors
-(global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c m p") 'mc/mark-previous-lines)
-(global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
-(global-set-key (kbd "C-c m e") 'mc/edit-lines)
-(global-set-key (kbd "C-c m s") 'mc/skip-to-next-like-this)
-(global-set-key (kbd "C-c m S") 'mc/skip-to-previous-like-this)
+;; Dealing with errors: "Key sequence ? starts with non-prefix key _"
+;; http://emacslife.com/read-lisp-tweak-emacs/beginner-3-make-things-more-convenient.html
+(global-set-key (kbd "C-m") nil) ;; Remove the old keybinding
+(global-set-key (kbd "C-m n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-m p") 'mc/mark-previous-lines)
+(global-set-key (kbd "C-m a") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-m e") 'mc/edit-lines)
+(global-set-key (kbd "C-m s") 'mc/skip-to-next-like-this)
+(global-set-key (kbd "C-m S") 'mc/skip-to-previous-like-this)
 
 ;; ace-jump-mode
 (global-set-key (kbd "C-c SPC")              'ace-jump-mode)
@@ -87,4 +92,10 @@
 
 ;; cua-mode
 (global-set-key (kbd "C-x SPC") 'cua-set-rectangle-mark)
+
+;; tabbar
+(global-set-key (kbd "C-x t r")   'tabbar-forward-tab)
+(global-set-key (kbd "C-c <right>") 'tabbar-forward-tab)
+(global-set-key (kbd "C-x t l")   'tabbar-backward-tab)
+(global-set-key (kbd "C-c <left>") 'tabbar-backward-tab)
 ;;; 99-keybind.el ends here

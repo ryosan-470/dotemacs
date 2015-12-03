@@ -8,7 +8,7 @@
 (require 'merlin)
 (add-hook 'tuareg-mode-hook 'merlin-mode)
 (setq merlin-use-auto-complete-mode 'easy)
-(define-key merlin-mode-map (kbd "TAB") 'merlin-try-completion)
+(define-key merlin-mode-map (kbd "C-c TAB") 'merlin-try-completion)
 ;; (define-key merlin-mode-map (kbd "C-c t") 'merlin-type-expr)
 (define-key merlin-mode-map (kbd "C-c t") 'merlin-type-enclosing) ;; OCamlコード中の任意の型を教えてくれる
 ;;; 17-ocaml.el ends here

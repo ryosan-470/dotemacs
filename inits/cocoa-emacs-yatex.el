@@ -3,6 +3,8 @@
 ;;; Code:
 ;; Add library path
 (require 'yatex)
+(add-to-list 'exec-path (expand-file-name "/Library/TeX/texbin"))
+
 ;; YaTeX mode
 (setq auto-mode-alist
     (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))

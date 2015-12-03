@@ -1,0 +1,37 @@
+;;; 35-web.el -- Emacs Web Developing mode
+;;; Commentary:
+;;; Code:
+(add-hook 'sgml-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook 'emmet-mode)
+(add-hook 'php-mode-hook 'emmet-mode)
+(add-hook 'web-mode-hook 'emmet-mode)
+(add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 4))) ;; Indent 4 spaces
+;; Emmetの補完機能をC-jではなくTABにする機能
+;; ただしこれを有効化するとTABによるインデントが死ぬので廃止する
+;; コードは将来のために残しておく
+(eval-after-load 'emmet-mode
+   '(progn
+      (define-key emmet-mode-keymap (kbd "C-c TAB")  'emmet-expand-line)))
+
+(add-to-list 'auto-mode-alist '("\\.php?\\'" .  php-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl?\\'" .  smarty-mode))
+
+(add-hook 'smarty-mode-hook 'php-mode)
+;; Web-mode
+(setq web-mode-html-offset 4)
+(setq web-mode-php-offset 4)
+
+(add-hook 'php-mode-hook
+          (lambda ()
+						(setq-default tab-width 4 indent-tabs-mode nil)
+            (helm-gtags-mode t)
+            (require 'php-completion)
+            (php-completion-mode t)
+            ;; (define-key php-mode-map (kbd "C-o") 'phpcmp-complete)
+            ;; (when (require 'auto-complete nil t)
+            ;;(make-variable-buffer-local 'ac-sources)
+            ;;  (add-to-list 'ac-sources 'ac-source-php-completion)
+            ;;  (auto-complete-mode t)))
+            ))
+;;; 35-emmet.el ends here

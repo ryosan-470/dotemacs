@@ -8,7 +8,7 @@
 ##
 ###################################################################
 TARGET_DIR="${HOME}/.dotconfig"       # 保存先
-VERSION="1.20"
+VERSION="1.30"
 
 DEMACS="${HOME}/.emacs.d"
 INSTALL_PATH="${HOME}/.dotconfig/dotemacs"
@@ -103,20 +103,6 @@ function symlink() {
     return 0
 }
 
-# [DEPLOY] install cask
-function install_cask() {
-    CASK_URL="https://raw.github.com/cask/cask/master/go"
-    if [ type curl > /dev/null 2>&1 ]; then
-        curl -fsSkL ${CASK_URL} | python
-    else
-        wget --no-check-certificate ${CASK_URL} && python go
-    fi
-    format "Success to install cask" success
-    format "Please add to path to use cask command" info
-    format "export PATH=${HOME}/.cask/bin:${PATH}"
-    rm go  # 残骸を削除
-    return 0
-}
 
 # [INIT] auto-complete-clang-async
 function install-acca() {
@@ -146,26 +132,13 @@ function deploy() {
     fetch ${_branch} || exit 1
     format "Make symlink" info
     symlink
-    format "Cask install" info
-    install_cask
     return 0
 }
 
 # init
 function init() {
     format "initialize" info
-    PIP_CMD="pip install -r ${DEMACS}/requirements.txt"
-    format "${PIP_CMD}" info
-    if [ ${OS} = "Linux" ]; then
-        sudo ${PIP_CMD}
-    else
-        ${PIP_CMD}
-    fi
-    export PATH="${HOME}/.cask/bin/cask:${PATH}"
-    format "Cask updateing..." info
-    cd ${DEMACS}
-    cask="${HOME}/.cask/bin/cask"
-    (${cask} install && ${cask} update && ${cask} upgrade) || (format "Failed to use cask command" && exit 1)
+    format "None" success
     return 0
 }
 
@@ -182,8 +155,8 @@ function install-travis() {
     format "Emacs version:\n`emacs --version`" info
     deploy "dev"
     init
-    format "Starting to build emacs-clang-complete-async" info
-    install-acca
+    # format "Starting to build emacs-clang-complete-async" info
+    # install-acca
     tests
 }
 OPT=$1
