@@ -1,5 +1,7 @@
 # dotemacs
-[![Build Status](https://travis-ci.org/jtwp470/dotemacs.svg)](https://travis-ci.org/jtwp470/dotemacs)
+[![Build Status](https://img.shields.io/travis/jtwp470/dotemacs.svg?style=flat-square)](https://travis-ci.org/jtwp470/dotemacs)
+[![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)]()
+[![platform](https://img.shields.io/badge/platform-OS%20X%20%7C%20Linux-808080.svg?style=flat-square)]()
 
 My configuration for Emacs.
 
@@ -7,20 +9,20 @@ I am Emacser. I cannot use Vim. The Emacs is the best editor all over the world!
 
 ## How to setup
 
-1. Download install script from https://raw.githubusercontent.com/jtwp470/dotemacs/dev/setup.sh
+1. Download install script from https://raw.githubusercontent.com/jtwp470/dotemacs/master/setup.sh
 2. Run the script!
 
 ```sh
-    $ wget https://raw.githubusercontent.com/jtwp470/dotemacs/dev/setup.sh
-    $ ./setup.sh all
+$ wget https://raw.githubusercontent.com/jtwp470/dotemacs/master/setup.sh
+$ ./setup.sh all
 ```
 
 
 ## Requirements
 
-* Emacs 24.3 or higher is recommended.
+* Emacs 24.4 or higher is recommended.
 * Running test below emacs versions.
-    * Emacs 23
+    * <del>Emacs 23</del> <strong>No longer supported because package.el does NOT support.</strong>
     * Emacs 24
     * Emacs Snapshot
 * Ricty Powerline ([vim-powerline](https://github.com/Lokaltog/vim-powerline/tree/develop/fontpatcher) is patched.)
@@ -51,5 +53,3 @@ I am Emacser. I cannot use Vim. The Emacs is the best editor all over the world!
 * ```snippets```はYasnippet用のスニペットです
 * ```tests```はEmacs Lispのバイトコンパイル用のテストスクリプトなどが収められています
 * ```themes```はEmacs用のテーマを格納しています
-
-外部Elisp管理には[Cask](https://github.com/cask/cask)を使っています.
