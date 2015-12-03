@@ -23,3 +23,8 @@ Emacsの設定は通常`init.el`または`.emacs.d`に追加していくもの�
 |:------------:|------|
 |<kbd>TAB</kbd>|補完|
 |<kbd>C-c t</kbd>|該当変数や関数の型を返す|
+
+### helm-ag
+詳しくはhttp://syohex.hatenablog.com/entry/20130302/1362182193 を参照のこと.
+
+なおThe Silver Searcherが必要なのでそこだけ気をつけて.

@@ -61,6 +61,7 @@
 (el-get-bundle go-mode)
 (el-get-bundle go-autocomplete)
 (el-get-bundle go-eldoc)
+(el-get-bundle helm-go-package)
 ;; Utility
 (el-get-bundle ace-jump-mode)
 (el-get-bundle anzu)

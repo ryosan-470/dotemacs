@@ -16,4 +16,4 @@
              ;; タグ一覧からタグを選択しその定義元にジャンプする
              (local-set-key (kbd "M-l") 'helm-gtags-select)
              ;; ジャンプする前の場所へ戻る
-             (local-set-key (kbd "C-x t") 'helm-gtags-pop-stack)))
+             (local-set-key (kbd "C-x p") 'helm-gtags-pop-stack)))
