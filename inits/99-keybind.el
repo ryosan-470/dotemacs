@@ -90,7 +90,7 @@
 
 ;; tabbar
 (global-set-key (kbd "C-x t r")   'tabbar-forward-tab)
-(global-set-key (kbd "M-<right>") 'tabbar-forward-tab)
+(global-set-key (kbd "C-c <right>") 'tabbar-forward-tab)
 (global-set-key (kbd "C-x t l")   'tabbar-backward-tab)
-(global-set-key (kbd "M-<left>") 'tabbar-backward-tab)
+(global-set-key (kbd "C-c <left>") 'tabbar-backward-tab)
 ;;; 99-keybind.el ends here
