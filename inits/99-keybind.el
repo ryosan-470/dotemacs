@@ -74,13 +74,13 @@
 ;; multiple-cursors
 ;; Dealing with errors: "Key sequence ? starts with non-prefix key _"
 ;; http://emacslife.com/read-lisp-tweak-emacs/beginner-3-make-things-more-convenient.html
-(global-set-key (kbd "C-m") nil) ;; Remove the old keybinding
-(global-set-key (kbd "C-m n") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-m p") 'mc/mark-previous-lines)
-(global-set-key (kbd "C-m a") 'mc/mark-all-like-this)
-(global-set-key (kbd "C-m e") 'mc/edit-lines)
-(global-set-key (kbd "C-m s") 'mc/skip-to-next-like-this)
-(global-set-key (kbd "C-m S") 'mc/skip-to-previous-like-this)
+;; (global-set-key (kbd "C-m") nil) ;; Remove the old keybinding
+(global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c m p") 'mc/mark-previous-lines)
+(global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c m e") 'mc/edit-lines)
+(global-set-key (kbd "C-c m s") 'mc/skip-to-next-like-this)
+(global-set-key (kbd "C-c m S") 'mc/skip-to-previous-like-this)
 
 ;; ace-jump-mode
 (global-set-key (kbd "C-c SPC")              'ace-jump-mode)
