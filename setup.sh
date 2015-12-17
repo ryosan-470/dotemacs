@@ -153,7 +153,7 @@ function tests() {
 
 function install-travis() {
     format "Emacs version:\n`emacs --version`" info
-    deploy "dev"
+    deploy "master"
     init
     # format "Starting to build emacs-clang-complete-async" info
     # install-acca
