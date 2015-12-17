@@ -16,6 +16,8 @@
 (add-to-list 'auto-mode-alist '("\\.php?\\'" .  php-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl?\\'" .  smarty-mode))
+;; jinja2
+(add-to-list 'auto-mode-alist '("\\.jinja2?\\'" . jinja2-mode))
 
 (add-hook 'smarty-mode-hook 'php-mode)
 ;; Web-mode
@@ -34,4 +36,9 @@
             ;;  (add-to-list 'ac-sources 'ac-source-php-completion)
             ;;  (auto-complete-mode t)))
             ))
+
+(add-hook 'jinja2-mode-hook
+          (lambda ()
+            (setq-default tab-width 4 indent-tabs-mode nil)
+            (emmet-mode t)))
 ;;; 35-emmet.el ends here

@@ -1,7 +1,6 @@
 ;;; init.el --- init.el
 ;;; Commentary:
 ;;; Code:
-;;; Cask
 ;; emacs -l init.el等で直接起動した時にuser-emacs-directoryが書き換わる
 ;; 詳細:http://d.hatena.ne.jp/syohex/20140923/1411445055
 (when load-file-name
