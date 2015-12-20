@@ -15,6 +15,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.php?\\'" .  php-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb?\\'" .  web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl?\\'" .  smarty-mode))
 ;; jinja2
 (add-to-list 'auto-mode-alist '("\\.jinja2?\\'" . jinja2-mode))

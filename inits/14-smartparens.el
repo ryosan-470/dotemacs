@@ -10,5 +10,8 @@
 (sp-local-pair 'YaTeX-mode "\{" "\}")
 
 (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
-(sp-local-pair 'markdown-mode "`" nil :actions '(insert))
+;; (sp-local-pair 'markdown-mode "`" nil :actions '(insert))
+;; Ruby
+(sp-local-pair 'web-mode "<" ">")
+(sp-local-pair 'web-mode "<%" "%>")
 ;;; 14-smartparens.el ends here

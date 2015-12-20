@@ -61,10 +61,14 @@
 (el-get-bundle go-autocomplete)
 (el-get-bundle go-eldoc)
 (el-get-bundle helm-go-package)
+;; Ruby
+(el-get-bundle enhanced-ruby-mode)
+(el-get-bundle ruby-electric)
+(el-get-bundle ruby-block)
+(el-get-bundle robe)
 ;; Utility
 (el-get-bundle ace-jump-mode)
 (el-get-bundle anzu)
-(el-get-bundle bind-key)
 (el-get-bundle diminish)
 (el-get-bundle expand-region)
 (el-get-bundle magit)
@@ -76,7 +80,6 @@
 (el-get-bundle projectile)
 (el-get-bundle quickrun)
 (el-get-bundle rainbow-delimiters)
-(el-get-bundle recentf-ext)
 (el-get-bundle smartparens)
 (el-get-bundle tabbar)
 (el-get-bundle undo-tree)
@@ -84,7 +87,7 @@
 (el-get-bundle visual-regexp)
 (el-get-bundle whitespace-cleanup-mode)
 (el-get-bundle yasnippet)
-
+(el-get-bundle yaml-mode)
 ;; Themes
 (el-get-bundle color-theme)
 (el-get-bundle molokai-theme)
