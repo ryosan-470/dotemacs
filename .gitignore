@@ -26,3 +26,5 @@ el-get/
 ._*
 .DS_Store
 \#*
+
+projectile-bookmarks.eld

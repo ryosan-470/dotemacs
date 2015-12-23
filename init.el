@@ -29,6 +29,9 @@
 (el-get-bundle helm-ag)
 (el-get-bundle helm-descbinds)
 (el-get-bundle helm-gtags)
+(el-get-bundle helm-projectile
+  :type github :pkgname "bbatsov/helm-projectile"
+  :branch "master")
 
 ;; Syntax checker
 (el-get-bundle flycheck/flycheck :depends (dash pkg-info let-alist cl-lib))
@@ -66,6 +69,7 @@
 (el-get-bundle ruby-electric)
 (el-get-bundle ruby-block)
 (el-get-bundle robe)
+(el-get-bundle projectile-rails)
 ;; Utility
 (el-get-bundle ace-jump-mode)
 (el-get-bundle anzu)

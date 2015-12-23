@@ -19,3 +19,11 @@
              (local-set-key (kbd "C-x p") 'helm-gtags-pop-stack)
              ;; 入力したファイルを開く
              (local-set-key (kbd "C-c C-f") 'helm-gtags-find-files)))
+
+;; Projectile
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+
+(setq projectile-switch-project-action 'helm-projectile-find-file)
+(setq projectile-switch-project-action 'helm-projectile)
