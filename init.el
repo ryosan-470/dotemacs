@@ -84,6 +84,7 @@
 (el-get-bundle projectile)
 (el-get-bundle quickrun)
 (el-get-bundle rainbow-delimiters)
+(el-get-bundle scss-mode)
 (el-get-bundle smartparens)
 (el-get-bundle tabbar)
 (el-get-bundle undo-tree)

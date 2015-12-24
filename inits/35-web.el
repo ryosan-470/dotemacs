@@ -19,6 +19,9 @@
 (add-to-list 'auto-mode-alist '("\\.tpl?\\'" .  smarty-mode))
 ;; jinja2
 (add-to-list 'auto-mode-alist '("\\.jinja2?\\'" . jinja2-mode))
+;; SCSS
+(add-to-list 'auto-mode-alist '("\\.css$" . scss-mode))
+(add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode))
 
 (add-hook 'smarty-mode-hook 'php-mode)
 ;; Web-mode
@@ -42,4 +45,14 @@
           (lambda ()
             (setq-default tab-width 4 indent-tabs-mode nil)
             (emmet-mode t)))
+
+;; for scss
+(defun scss-custom ()
+  "scss-mode-hook"
+  (and
+   (set (make-local-variable 'css-indent-offset) 2)
+   (set (make-local-variable 'scss-compile-at-save) nil)))
+
+(add-hook 'scss-mode-hook
+          '(lambda () (scss-custom)))
 ;;; 35-emmet.el ends here
