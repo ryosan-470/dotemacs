@@ -10,3 +10,6 @@
 [submodule "elisp/emacs-clang-complete-async"]
 	path = elisp/emacs-clang-complete-async
 	url = https://github.com/Golevka/emacs-clang-complete-async.git
+[submodule "snippets/go-mode"]
+	path = snippets/go-mode
+	url = https://github.com/dominikh/yasnippet-go.git

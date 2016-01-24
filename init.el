@@ -34,8 +34,12 @@
   :branch "master")
 
 ;; Syntax checker
-(el-get-bundle flycheck/flycheck :depends (dash pkg-info let-alist cl-lib))
-(el-get-bundle elpa:flycheck-pos-tip)
+(el-get-bundle flycheck
+  :type github :pkgname "flycheck/flycheck"
+  :branch "master" :depends (dash pkg-info let-alist cl-lib))
+(el-get-bundle flycheck-pos-tip
+  :type github :pkgname "flycheck/flycheck-pos-tip"
+  :branch "master")
 ;; Programming
 (el-get-bundle auto-complete :depends (seq popup))
 (el-get-bundle auto-complete-clang)
@@ -46,14 +50,18 @@
 (el-get-bundle haskell-mode)
 
 (el-get-bundle markdown-mode)
-(el-get-bundle js2-mode)
+(el-get-bundle js2-mode
+  :type github :pkgname "mooz/js2-mode"
+  :branch "master")
 (el-get-bundle ac-js2)
 (el-get-bundle emmet-mode)
 (el-get-bundle coffee-mode)
 (el-get-bundle cython-mode)
 (el-get-bundle epc)
 (el-get-bundle jedi)
-(el-get-bundle elpa:yatex)
+(el-get-bundle yatex
+  :type github :pkgname "emacsmirror/yatex"
+  :branch "master")
 (el-get-bundle scala-mode2)
 (el-get-bundle web-mode)
 (el-get-bundle smarty-mode)  ;; PHP Templete Engine
@@ -70,14 +78,19 @@
 (el-get-bundle enhanced-ruby-mode)
 (el-get-bundle ruby-electric)
 (el-get-bundle ruby-block)
-(el-get-bundle robe)
+;; (el-get-bundle robe)
 (el-get-bundle projectile-rails)
 ;; Utility
 (el-get-bundle ace-jump-mode)
 (el-get-bundle anzu)
+(el-get-bundle dash
+  :type github :pkgname "magnars/dash.el"
+  :branch "master")
 (el-get-bundle diminish)
 (el-get-bundle editorconfig)
 (el-get-bundle expand-region)
+(el-get-bundle let-alist
+  :type http :url "https://elpa.gnu.org/packages/let-alist-1.0.4.el")
 (el-get-bundle magit)
 (el-get-bundle multiple-cursors)
 (el-get-bundle popup)
@@ -97,7 +110,6 @@
 (el-get-bundle yasnippet)
 (el-get-bundle yaml-mode)
 ;; Themes
-(el-get-bundle color-theme)
 (el-get-bundle molokai-theme)
 (el-get-bundle tangotango-theme)
 
