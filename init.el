@@ -42,6 +42,8 @@
 ;; OCaml
 (el-get-bundle ocaml/tuareg)
 (el-get-bundle the-lambda-church/merlin)
+;; Haskell
+(el-get-bundle haskell-mode)
 
 (el-get-bundle markdown-mode)
 (el-get-bundle js2-mode)
