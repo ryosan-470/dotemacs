@@ -76,6 +76,7 @@
 (el-get-bundle ace-jump-mode)
 (el-get-bundle anzu)
 (el-get-bundle diminish)
+(el-get-bundle editorconfig)
 (el-get-bundle expand-region)
 (el-get-bundle magit)
 (el-get-bundle multiple-cursors)
