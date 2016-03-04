@@ -20,7 +20,7 @@
     (eval-print-last-sexp)))
 
 ;; el-get用のパッケージ定義ファイルの置き場
-;; (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-recipes")
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-recipes")
 ;; el-get packages
 
 (el-get-bundle init-loader)
@@ -89,8 +89,7 @@
 (el-get-bundle diminish)
 (el-get-bundle editorconfig)
 (el-get-bundle expand-region)
-(el-get-bundle let-alist
-  :type http :url "https://elpa.gnu.org/packages/let-alist-1.0.4.el")
+(el-get-bundle let-alist)
 (el-get-bundle magit)
 (el-get-bundle multiple-cursors)
 (el-get-bundle popup)
@@ -116,6 +115,6 @@
 ;; init-loader
 (require 'init-loader)
 (custom-set-variables
-  '(init-loader-show-log-after-init 'error-only))
+ '(init-loader-show-log-after-init 'error-only))
 (init-loader-load "~/.emacs.d/inits/")
 ;;; init.el ends here
