@@ -7,6 +7,9 @@
 ## Licence: Public
 ##
 ###################################################################
+set -e
+set -u
+
 TARGET_DIR="${HOME}/.dotconfig"       # 保存先
 VERSION="1.30"
 
@@ -168,8 +171,6 @@ case ${OPT} in
         init && exit 0;;
     "test")
         tests && exit 0;;
-    "install-cask")
-        install_cask && exit 0;;
     "install-acca")
         install-acca && exit 0;;
     "install-travis")
@@ -188,7 +189,6 @@ The setup.sh for emacs configuration setup scripts.
 - deploy         Deploy. Clone repository, make symlink and install cask
 - init           Initialize. Emacs installation via cask.
 - test           Test section. byte compile  ~/.emacs.d/inits/*.el.
-- install-cask   Only to install cask
 - install-acca   Only to install emacs-clang-complete-async.
 - install-travis For Travis CI test
 - help           This section.

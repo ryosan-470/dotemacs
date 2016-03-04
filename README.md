@@ -9,14 +9,9 @@ I am Emacser. I cannot use Vim. The Emacs is the best editor all over the world!
 
 ## How to setup
 
-1. Download install script from https://raw.githubusercontent.com/jtwp470/dotemacs/master/setup.sh
-2. Run the script!
-
 ```sh
-$ wget https://raw.githubusercontent.com/jtwp470/dotemacs/master/setup.sh
-$ ./setup.sh all
+$ curl -sL https://dotemacs.jtwp470.net > setup.sh && bash setup.sh all
 ```
-
 
 ## Requirements
 
