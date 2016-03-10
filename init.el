@@ -57,10 +57,11 @@
 ;; Scala
 (el-get-bundle scala-mode2)
 ;; PHP
+(el-get-bundle ac-php)
 (el-get-bundle php-mode)
 (el-get-bundle php-completion
   :type github :pkgname "suzuki/php-completion"
-  :branch "develop")         ;; For PHP
+  :branch "feature/helm-version")  ;; For PHP
 (el-get-bundle smarty-mode)  ;; PHP Templete Engine
 ;; golang
 (el-get-bundle go-mode)

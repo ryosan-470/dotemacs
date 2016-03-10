@@ -28,3 +28,7 @@ Emacsの設定は通常`init.el`または`.emacs.d`に追加していくもの�
 詳しくはhttp://syohex.hatenablog.com/entry/20130302/1362182193 を参照のこと.
 
 なおThe Silver Searcherが必要なのでそこだけ気をつけて.
+
+## ac-php
+auto-complete for PHP.
+インストールの方法に関しては https://github.com/syohex/ac-php#install を読むこと.
