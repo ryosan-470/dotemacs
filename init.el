@@ -89,6 +89,7 @@
 (el-get-bundle diminish)
 (el-get-bundle editorconfig)
 (el-get-bundle expand-region)
+(el-get-bundle git-modes)
 (el-get-bundle let-alist)
 (el-get-bundle magit)
 (el-get-bundle multiple-cursors)
