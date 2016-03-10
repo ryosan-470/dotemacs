@@ -29,49 +29,39 @@
 (el-get-bundle helm-ag)
 (el-get-bundle helm-descbinds)
 (el-get-bundle helm-gtags)
-(el-get-bundle helm-projectile
-  :type github :pkgname "bbatsov/helm-projectile"
-  :branch "master")
+(el-get-bundle bbatsov/helm-projectile)
 
 ;; Syntax checker
-(el-get-bundle flycheck
-  :type github :pkgname "flycheck/flycheck"
-  :branch "master" :depends (dash pkg-info let-alist cl-lib))
-(el-get-bundle flycheck-pos-tip
-  :type github :pkgname "flycheck/flycheck-pos-tip"
-  :branch "master")
+(el-get-bundle flycheck/flycheck
+  :depends (dash pkg-info let-alist cl-lib))
+(el-get-bundle flycheck/flycheck-pos-tip)
+
 ;; Programming
 (el-get-bundle auto-complete :depends (seq popup))
 (el-get-bundle auto-complete-clang)
-(el-get-bundle ac-shell
-  :type github :pkgname "syohex/emacs-ac-shell"
-  :branch "master")
+(el-get-bundle syohex/emacs-ac-shell)
+;; Python
+(el-get-bundle jedi :depends (epc))
+(el-get-bundle cython-mode)
+(el-get-bundle marcwebbie/auto-virtualenv)
 ;; OCaml
 (el-get-bundle ocaml/tuareg)
 (el-get-bundle the-lambda-church/merlin)
 ;; Haskell
 (el-get-bundle haskell-mode)
-
-(el-get-bundle markdown-mode)
-(el-get-bundle js2-mode
-  :type github :pkgname "mooz/js2-mode"
-  :branch "master")
+;; Javascript
+(el-get-bundle mooz/js2-mode)
 (el-get-bundle ac-js2)
 (el-get-bundle emmet-mode)
 (el-get-bundle coffee-mode)
-(el-get-bundle cython-mode)
-(el-get-bundle epc)
-(el-get-bundle jedi)
-(el-get-bundle yatex
-  :type github :pkgname "emacsmirror/yatex"
-  :branch "master")
+;; Scala
 (el-get-bundle scala-mode2)
-(el-get-bundle web-mode)
-(el-get-bundle smarty-mode)  ;; PHP Templete Engine
+;; PHP
 (el-get-bundle php-mode)
 (el-get-bundle php-completion
   :type github :pkgname "suzuki/php-completion"
   :branch "develop")         ;; For PHP
+(el-get-bundle smarty-mode)  ;; PHP Templete Engine
 ;; golang
 (el-get-bundle go-mode)
 (el-get-bundle go-autocomplete)
@@ -83,18 +73,18 @@
 (el-get-bundle ruby-block)
 ;; (el-get-bundle robe)
 (el-get-bundle projectile-rails)
+
 ;; Utility
 (el-get-bundle ace-jump-mode)
 (el-get-bundle anzu)
-(el-get-bundle dash
-  :type github :pkgname "magnars/dash.el"
-  :branch "master")
+(el-get-bundle magnars/dash.el)
 (el-get-bundle diminish)
 (el-get-bundle editorconfig)
 (el-get-bundle expand-region)
 (el-get-bundle git-modes)
 (el-get-bundle let-alist)
 (el-get-bundle magit)
+(el-get-bundle markdown-mode)
 (el-get-bundle multiple-cursors)
 (el-get-bundle popup)
 (el-get-bundle popwin)
@@ -109,15 +99,18 @@
 (el-get-bundle undo-tree)
 (el-get-bundle undohist)
 (el-get-bundle visual-regexp)
+(el-get-bundle web-mode)
 (el-get-bundle whitespace-cleanup-mode)
 (el-get-bundle yasnippet)
 (el-get-bundle yaml-mode)
+(el-get-bundle emacsmirror/yatex)
+
 ;; Themes
 (el-get-bundle molokai-theme)
 (el-get-bundle tangotango-theme)
 
 ;; init-loader
-(require 'init-loader)
+;; (require 'init-loader)
 (custom-set-variables
  '(init-loader-show-log-after-init 'error-only))
 (init-loader-load "~/.emacs.d/inits/")
