@@ -48,8 +48,10 @@
 ;; メニューバーを非表示
 (menu-bar-mode -1)
 ;; インデント関連の設定
-(setq default-tab-width 2)
-(setq c-basic-offset 4)
+;; TAB文字を無効化しTABを4スペースに変換するのがデフォルトにする
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq-default c-basic-offset 4)
 ;; (setq c-default-style '((java-mode . "java") (python-mode . "python") (other . "linux")))
 (setq-default indent-tabs-mode nil) ;; スペースを使う
 ;; 自動インデント
