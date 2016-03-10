@@ -27,4 +27,7 @@
   (add-hook 'auto-complete-mode-hook 'ac-common-setup)
   (global-auto-complete-mode t))
 (my-ac-config)
+
+;; ac-shell
+(add-hook 'sh-mode-hook #'ac-shell-setup)
 ;;; 10-autocomplete.el ends here

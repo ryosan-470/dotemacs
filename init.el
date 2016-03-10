@@ -43,6 +43,9 @@
 ;; Programming
 (el-get-bundle auto-complete :depends (seq popup))
 (el-get-bundle auto-complete-clang)
+(el-get-bundle ac-shell
+  :type github :pkgname "syohex/emacs-ac-shell"
+  :branch "master")
 ;; OCaml
 (el-get-bundle ocaml/tuareg)
 (el-get-bundle the-lambda-church/merlin)
