@@ -134,5 +134,9 @@
  'tabbar-unselected nil
  :background "white"
  :foreground "black"
-    :box nil)
+ :box nil)
+;; git-gutter
+(global-git-gutter-mode t)
+;; Live updating
+(custom-set-variables '(git-gutter:update-interval 2))
 ;;; 00-basic.el ends here
