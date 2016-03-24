@@ -39,7 +39,8 @@
 ;; Programming
 (el-get-bundle auto-complete :depends (seq popup))
 (el-get-bundle auto-complete-clang)
-(el-get-bundle syohex/emacs-ac-shell)
+;; (el-get-bundle syohex/emacs-ac-shell)
+(el-get-bundle syohex/emacs-ac-emoji)
 ;; Python
 (el-get-bundle jedi :depends (epc))
 (el-get-bundle cython-mode)
@@ -57,7 +58,7 @@
 ;; Scala
 (el-get-bundle scala-mode2)
 ;; PHP
-(el-get-bundle ac-php)
+;; (el-get-bundle ac-php)
 (el-get-bundle php-mode)
 (el-get-bundle php-completion
   :type github :pkgname "suzuki/php-completion"
