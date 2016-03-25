@@ -139,4 +139,7 @@
 (global-git-gutter-mode t)
 ;; Live updating
 (custom-set-variables '(git-gutter:update-interval 2))
+;; 環境変数の引き継ぎ
+(let ((envs '("PATH" "GOPATH")))
+  (exec-path-from-shell-copy-envs envs))
 ;;; 00-basic.el ends here
