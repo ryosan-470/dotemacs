@@ -57,6 +57,7 @@
 (el-get-bundle coffee-mode)
 ;; Scala
 (el-get-bundle scala-mode2)
+(el-get-bundle ensime)
 ;; PHP
 ;; (el-get-bundle ac-php)
 (el-get-bundle php-mode)
