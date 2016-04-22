@@ -46,7 +46,8 @@
 (el-get-bundle irony)
 (el-get-bundle company-irony)
 ;; Python
-(el-get-bundle jedi :depends (epc))
+(el-get-bundle company-jedi)
+(el-get-bundle jedi-core)
 (el-get-bundle cython-mode)
 (el-get-bundle marcwebbie/auto-virtualenv)
 ;; OCaml
