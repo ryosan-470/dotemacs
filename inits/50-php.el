@@ -6,7 +6,6 @@
 (add-hook 'php-mode-hook
           (lambda ()
             (helm-gtags-mode t) ;; Enable helm gtags mode on PHP mode
-            (auto-complete-mode t)
             (php-completion-mode t)
             ;; (setq ac-php-use-cscope-flag t) ;; Enable cscope
             (setq ac-sources

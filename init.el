@@ -40,10 +40,6 @@
 (el-get-bundle flycheck/flycheck-pos-tip)
 
 ;; Programming
-(el-get-bundle auto-complete :depends (seq popup))
-(el-get-bundle auto-complete-clang)
-;; (el-get-bundle syohex/emacs-ac-shell)
-(el-get-bundle syohex/emacs-ac-emoji)
 ;; Python
 (el-get-bundle jedi :depends (epc))
 (el-get-bundle cython-mode)
