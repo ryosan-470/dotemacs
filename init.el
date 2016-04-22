@@ -40,6 +40,11 @@
 (el-get-bundle flycheck/flycheck-pos-tip)
 
 ;; Programming
+;; Auto Complete framework
+(el-get-bundle company-mode/company-mode)
+;; For C++
+(el-get-bundle irony)
+(el-get-bundle company-irony)
 ;; Python
 (el-get-bundle jedi :depends (epc))
 (el-get-bundle cython-mode)
