@@ -12,4 +12,7 @@
             (local-set-key (kbd "M-t") 'godef-jump)
             (setq-default tab-width 4 indent-tabs-mode nil)
             (go-eldoc-setup)))
+
+(add-to-list 'go-mode-hook 'company-go)
+(add-to-list 'company-backends 'company-go)
 ;;; 50-go.el ends here

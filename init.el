@@ -72,9 +72,9 @@
 (el-get-bundle smarty-mode)  ;; PHP Templete Engine
 ;; golang
 (el-get-bundle go-mode)
-(el-get-bundle go-autocomplete)
 (el-get-bundle go-eldoc)
 (el-get-bundle helm-go-package)
+(el-get-bundle go-company)
 ;; Ruby
 (el-get-bundle enhanced-ruby-mode)
 (el-get-bundle ruby-electric)
