@@ -21,9 +21,10 @@
              (local-set-key (kbd "C-c C-f") 'helm-gtags-find-files)))
 
 ;; Projectile
-(projectile-global-mode)
-(setq projectile-completion-system 'helm)
-(helm-projectile-on)
+;; (projectile-global-mode)
+;; (setq projectile-completion-system 'helm)
+;; (helm-projectile-on)
 
-(setq projectile-switch-project-action 'helm-projectile-find-file)
-(setq projectile-switch-project-action 'helm-projectile)
+;; (setq projectile-switch-project-action 'helm-projectile-find-file)
+;; (setq projectile-switch-project-action 'helm-projectile)
+;;; 02-helm.el ends here

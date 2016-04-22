@@ -139,7 +139,13 @@
 (global-git-gutter-mode t)
 ;; Live updating
 (custom-set-variables '(git-gutter:update-interval 2))
+;; シンボリックリンクの読み込みを許可
+(setq vc-follow-symlinks t)
+;; シンボリックリンク先のVCS内で更新が入った場合にバッファを自動更新
+(setq auto-revert-check-vc-info t)
 ;; 環境変数の引き継ぎ
-(let ((envs '("PATH" "GOPATH")))
-  (exec-path-from-shell-copy-envs envs))
+;; 何故かこれらを有効にするとEmacsの起動が糞遅くなる
+;; (exec-path-from-shell-initialize)
+;; (let ((envs '("VIRTUAL_ENV" "GOROOT" "GOPATH")))
+;;  (exec-path-from-shell-copy-envs envs))
 ;;; 00-basic.el ends here

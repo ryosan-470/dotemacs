@@ -19,6 +19,9 @@
     (goto-char (point-max))
     (eval-print-last-sexp)))
 
+;; suppress ac-handle-defination warnings
+(setq ad-redefinition-action 'accept)
+
 ;; el-get用のパッケージ定義ファイルの置き場
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-recipes")
 ;; el-get packages
@@ -80,6 +83,7 @@
 ;; Utility
 (el-get-bundle ace-jump-mode)
 (el-get-bundle anzu)
+(el-get-bundle exec-path-from-shell)
 (el-get-bundle magnars/dash.el)
 (el-get-bundle diminish)
 (el-get-bundle editorconfig)
