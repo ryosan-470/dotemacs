@@ -85,6 +85,7 @@
 ;; Utility
 (el-get-bundle ace-jump-mode)
 (el-get-bundle anzu)
+(el-get-bundle company-emoji)
 (el-get-bundle exec-path-from-shell)
 (el-get-bundle magnars/dash.el)
 (el-get-bundle diminish)
