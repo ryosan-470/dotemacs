@@ -6,14 +6,8 @@
 (add-hook 'php-mode-hook
           (lambda ()
             (helm-gtags-mode t) ;; Enable helm gtags mode on PHP mode
-            (php-completion-mode t)
-            ;; (setq ac-php-use-cscope-flag t) ;; Enable cscope
-            (setq ac-sources
-                  '(ac-source-php
-                    ac-source-words-in-same-mode-buffers
-                    ac-source-php-completion
-                    ac-source-filename))
-            (yas-global-mode 1)
+            (require 'ac-php-company)
+            (add-to-list 'company-backends 'company-ac-php-backend)
             ;; 定義元へジャンプ
             (define-key php-mode-map (kbd "M-t") 'ac-php-find-symbol-at-point)
             ;; 戻る
