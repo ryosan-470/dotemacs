@@ -11,7 +11,7 @@ set -e
 set -u
 
 TARGET_DIR="${HOME}/.dotconfig"       # 保存先
-VERSION="1.30"
+VERSION="1.40"
 
 DEMACS="${HOME}/.emacs.d"
 INSTALL_PATH="${HOME}/.dotconfig/dotemacs"
@@ -106,28 +106,6 @@ function symlink() {
     return 0
 }
 
-
-# [INIT] auto-complete-clang-async
-function install-acca() {
-    if [ ${OS} = "Linux" ]; then
-        # Ubuntuであると仮定する
-        format "install dependences" info
-        sudo apt-get install clang-3.5 libclang-3.5-dev llvm-3.5-dev || (format "Failed to install dependences using apt" fail && exit 1)
-        cd ${DEMACS}/elisp/emacs-clang-complete-async
-        make LLVM_CONFIG=llvm-config-3.5
-        ln -s ./clang-complete ~/.emacs.d/clang-complete
-    elif [ ${OS} = "Darwin" ]; then
-        # Mac OSX
-        brew install emacs-clang-complete-async
-        ln -s `brew --prefix`/Cellar/emacs-clang-complete-async/clang-complete ~/.emacs.d/clang-complete
-    else
-        format "Not supported your OS" fail
-        return 1
-    fi
-    format "Success to install emacs-clang-complete-async" success
-    return 0
-}
-
 # Deploy
 function deploy() {
     format "Starting installation for dotemacs" info
@@ -158,8 +136,6 @@ function install-travis() {
     format "Emacs version:\n`emacs --version`" info
     deploy "master"
     init
-    # format "Starting to build emacs-clang-complete-async" info
-    # install-acca
     tests
 }
 OPT=$1
@@ -171,8 +147,6 @@ case ${OPT} in
         init && exit 0;;
     "test")
         tests && exit 0;;
-    "install-acca")
-        install-acca && exit 0;;
     "install-travis")
         install-travis && exit 0;;
     "help")
@@ -185,11 +159,10 @@ The setup.sh for emacs configuration setup scripts.
 
 [OPTIONS]:
 
-- all            Default installation command. Deploy, init and install-acca command
+- all            Default installation command. Deploy, init command
 - deploy         Deploy. Clone repository, make symlink and install cask
 - init           Initialize. Emacs installation via cask.
 - test           Test section. byte compile  ~/.emacs.d/inits/*.el.
-- install-acca   Only to install emacs-clang-complete-async.
 - install-travis For Travis CI test
 - help           This section.
 _EOT_
@@ -200,8 +173,6 @@ _EOT_
         deploy || (format "[FAILED] deploying..." fail && exit 1)
         format "Initialize" info
         init   || (format "[FAILED] initialize..." fail && exit 1)
-        format "Starting installation to emacs-clang-complete-async" info
-        install-acca
         exit 0;;
     *)
         bash ./setup.sh help
