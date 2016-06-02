@@ -79,7 +79,7 @@
 (el-get-bundle enhanced-ruby-mode)
 (el-get-bundle ruby-electric)
 (el-get-bundle ruby-block)
-;; (el-get-bundle robe)
+(el-get-bundle robe-mode)
 (el-get-bundle projectile-rails)
 
 ;; Utility

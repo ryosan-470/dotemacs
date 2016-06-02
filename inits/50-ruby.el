@@ -1,15 +1,18 @@
 ;;; 50-ruby.el --- for Ruby
 ;;; Commentary:
 ;;; Code:
-(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . enh-ruby-mode))
 
-(add-hook 'ruby-mode-hook
+(eval-after-load 'company '(push 'company-robe company-backends))
+
+(add-hook 'enf-ruby-mode-hook 'robe-mode)
+
+;; ruby-end endなどを自動挿入する
+(add-hook 'enh-ruby-mode-hook
           '(lambda ()
-             (ruby-electric-mode t)
-             (setq ruby-electric-expand-delimiters-list nil)
-             (ruby-block-mode t)
-             (setq ruby-block-highlight-toggle t)
-             (add-to-list 'ac-modes 'ruby-mode)
-             (add-to-list 'ac-modes 'web-mode)))
+             (abbrev-mode 1)
+             (electric-indent-mode t)
+             (electric-layout-mode t)
+             (setq flycheck-checker 'ruby-rubylint)))
 ;;; 50-ruby.el ends here
