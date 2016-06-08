@@ -8,6 +8,7 @@ undohist/
 elpa/
 .*
 !.gitignore
+!.tern-config
 .mc-lists.el             # multiple-cursors
 url/
 abbrev_defs

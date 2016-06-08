@@ -57,9 +57,9 @@
 (el-get-bundle haskell-mode)
 ;; Javascript
 (el-get-bundle mooz/js2-mode)
-(el-get-bundle ac-js2)
 (el-get-bundle emmet-mode)
 (el-get-bundle coffee-mode)
+(el-get-bundle company-tern)
 ;; Scala
 (el-get-bundle scala-mode2)
 (el-get-bundle ensime)
